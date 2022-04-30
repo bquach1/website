@@ -9,15 +9,15 @@ const Navbar = () => {
         <NavMenu>
           <NavLink to="/about" activeStyle>
             About Me
-          </NavLink>
-          <NavLink to="/contact" activeStyle>
-            Featured Projects
-          </NavLink>
+          </NavLink>        
           <NavLink to="/blogs" activeStyle>
             Links
           </NavLink>
           <NavLink to="/sign-up" activeStyle>
             Contact Info
+          </NavLink>
+          <NavLink to="/contact" activeStyle>
+            Featured Projects
           </NavLink>
         </NavMenu>
       </Nav>

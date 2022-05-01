@@ -9,6 +9,7 @@ export const Nav = styled.nav`
   justify-content: flex-start;
   z-index: 12;
   font-weight:bolder;
+  border-radius:5px;
 `;
   
 export const NavLink = styled(Link)`

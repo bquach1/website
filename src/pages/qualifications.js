@@ -1,6 +1,6 @@
 import React from 'react';
   
-const Contact = () => {
+const Qualifications = () => {
   return (
     <div>
       <embed class="resume" type="image/jpg" src={require('./images/resume1.jpg')} width="100%" height="100%"></embed>
@@ -9,4 +9,4 @@ const Contact = () => {
   );
 };
   
-export default Contact;
+export default Qualifications;

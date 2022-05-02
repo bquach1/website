@@ -3,6 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <div class="wrapper">
+      <img src={require('./images/personal_profile.jpg')} alt="Headshot" width="500" height ="600"/>
       <h1>
         Greetings!
       </h1>
@@ -15,9 +16,23 @@ const About = () => {
       </h1>
         <p>
           I'm an incoming technical intern at DXC
-          Technology in New Orleans for summer 2022 and a member of 
+          Technology in New Orleans for summer 2022 and member of 
           the SciQuel web development team.
         </p>  
+      <h1>
+        My Qualifications and Professional Interests
+      </h1>
+        <p>
+          I have a good deal of front-end development and some back-end
+          development experiences from classwork and student worker experiences.
+          I'm working towards acquiring a CS degree with a concentration in
+          software engineering, so I'm primarily interested in that field.
+          I really like working with UI/UX development and learning more about
+          web API and framework development, though. Please see "Contact" info 
+          if interested in working with me, as I'm always willing 
+          to work with new people and learn more about software, web development,
+          and other subjects!
+        </p>
       <h1>
         Some Fun Facts
       </h1>
@@ -33,10 +48,7 @@ const About = () => {
         <p>
           This website is one of my first real solo web development
           projects that I'm developing, and I hope to use it as 
-          a personal website. Please see "Contact" info to get in
-          touch, as I'm always willing to work with new people and
-          learn more about software and web development and other
-          subjects!
+          a personal website. 
         </p>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
   
-const Blogs = () => {
+const Links = () => {
   return (
     <div class="wrapper">
       <h1 class="wrapper"><a href = 
@@ -14,4 +14,4 @@ const Blogs = () => {
   );
 };
   
-export default Blogs;
+export default Links;

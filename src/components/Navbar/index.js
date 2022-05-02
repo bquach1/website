@@ -10,15 +10,15 @@ const Navbar = () => {
           <NavLink to="/about" activeStyle>
             About Me
           </NavLink>        
-          <NavLink to="/blogs" activeStyle>
+          <NavLink to="/links" activeStyle>
             Links
           </NavLink>
-          <NavLink to="/sign-up" activeStyle>
-            Contact Info
+          <NavLink to="/qualifications" activeStyle>
+            Resume and Credentials
           </NavLink>
           <NavLink to="/contact" activeStyle>
-            Featured Projects
-          </NavLink>
+            Contact Info
+          </NavLink>          
         </NavMenu>
       </Nav>
     </>

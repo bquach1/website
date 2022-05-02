@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <div class="wrapper">
-      <img src={require('./images/personal_profile.jpg')} alt="Headshot" width="500" height ="600"/>
+      <img src={require('./images/personal_profile.jpg')} alt="Headshot" width="500" height ="625"/>
       <h1>
         Greetings!
       </h1>

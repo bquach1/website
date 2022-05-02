@@ -11,7 +11,7 @@ const Navbar = () => {
             About Me
           </NavLink>        
           <NavLink to="/links" activeStyle>
-            Links
+            Featured Projects
           </NavLink>
           <NavLink to="/qualifications" activeStyle>
             Resume and Credentials

@@ -15,10 +15,10 @@ return (
     <Navbar />
     <Routes>
         <Route exact path='/' element={<Home />} />
-        <Route path='/about' element={<About/>} />                
-        <Route path='/qualifications' element={<Qualifications/>} />
-        <Route path='/links' element={<Links/>} />
-        <Route path='/contact' element={<Contact/>} />
+        <Route exact path='/about' element={<About/>} />                
+        <Route exact path='/qualifications' element={<Qualifications/>} />
+        <Route exact path='/links' element={<Links/>} />
+        <Route exact path='/contact' element={<Contact/>} />
     </Routes>
     </Router>
 );

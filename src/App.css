@@ -33,3 +33,34 @@ img {
 .label {
   text-align:center;
 }
+
+.slidein {
+  animation-duration: 4s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 150%;
+    width: 300%;
+  }
+  
+  25% {
+    font-size: 300%;
+    margin-left: 50%;
+    width: 150%;
+  }
+
+  50% {
+    margin-left: 0%;
+    width: 300%;
+  }
+
+  to {
+    color:burlywood;
+    margin-left: 100%;
+    width: 300%;
+  }
+}

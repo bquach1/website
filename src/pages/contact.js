@@ -21,10 +21,10 @@ const Contact = () => {
 
       <h1>Links</h1>
       <h1 class="unbold"><a href = 
-      "https://www.linkedin.com/in/bruce-quach-b90745111/" target="_blank">LinkedIn</a>
+      "https://www.linkedin.com/in/bruce-quach-b90745111/" target="_blank" rel="noreferrer">LinkedIn</a>
       </h1>
       <h1 class="unbold"><a href = 
-      "https://github.com/bquach1" target="_blank">GitHub</a>
+      "https://github.com/bquach1" target="_blank" rel="noreferrer">GitHub</a>
       </h1>  
     </div>
   );

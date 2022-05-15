@@ -2,8 +2,9 @@ import React from 'react';
   
 const Home = () => {
   return (
-    <div>
-      <h1 class="slidein">Welcome!</h1>
+    <div class="content">
+      <h1>Welcome!</h1>
+      <h1>Welcome!</h1>
     </div>
   );
 };

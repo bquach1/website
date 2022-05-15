@@ -14,7 +14,7 @@ const Navbar = () => {
             Featured Projects
           </NavLink>
           <NavLink to="/qualifications" activeStyle>
-            Resume and Credentials
+            CV/Resume and Credentials
           </NavLink>
           <NavLink to="/contact" activeStyle>
             Contact Info

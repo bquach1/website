@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <div class="wrapper">
-      <img src={require('./images/personal_profile.jpg')} alt="Headshot" width="500" height ="625"/>
+      <img style={styles.profilePicture} src={require('./images/personal_picture.jpg')} alt="Headshot"/>
       <h1>
         Greetings!
       </h1>
@@ -55,3 +55,11 @@ const About = () => {
 };
   
 export default About;
+
+let styles = {
+  profilePicture: {
+    borderRadius: 15,
+    width: 500,
+    height: 'auto'
+  }
+}

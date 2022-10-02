@@ -1,17 +1,19 @@
+import { tSModuleDeclaration } from "@babel/types";
 import React from "react";
+import '../css/about.css';
   
 const About = () => {
   return (
     <div style={styles.wrapper} class="wrapper">
       <img style={styles.profilePicture} src={require('./images/personal_picture.jpg')} alt="Headshot"/>
-      <h1>
+      <h1 class="header">
         Greetings!
       </h1>
         <p>
           Hi, I'm Bruce. I'm a junior computer science student at 
           Louisiana State University.
         </p>
-      <h1>
+      <h1 class="header">
         Who I Am
       </h1>
         <p>
@@ -22,16 +24,16 @@ const About = () => {
           worker at LSU IT Services. I'm always looking to expand my project
           horizons and learn new skills.
         </p>  
-      <h1>
+      <h1 class="header">
         My Qualifications and Professional Interests
       </h1>
         <p>
           I have a good deal of front-end development and some back-end
           development experiences from classwork and student worker experiences.
-          I've also completed an internship in summer 2022 at DXC Technology, 
+          I've also completed a summer internship in 2022 at DXC Technology, 
           a software consulting company in New Orleans, LA, working with AWS and
-          MySQL databases to perform data ETL services, as well as a summer 2022 internship at
-          Runatek, a medtech startup in Dallas, Texas, working with React Native, Arduino
+          MySQL databases to perform data ETL services, as well as a summer internship at
+          Runatek in 2022, a medtech startup in Dallas, Texas, working with React Native, Arduino
           code, and materials to work towards creating useful and beneficial medical devices.
           I'm working towards acquiring a software engineering degree, so I'm 
           primarily interested in that field. I really like working with UI/UX development 
@@ -40,7 +42,7 @@ const About = () => {
           to work with new people and learn more about software, web development,
           and other subjects!
         </p>
-      <h1>
+      <h1 class="header">
         Some Fun Facts
       </h1>
         <p>
@@ -49,7 +51,7 @@ const About = () => {
           and Bungo Stray Dogs. I'm always willing to watch and listen to
           new things!
         </p>
-      <h1>
+      <h1 class="header">
         Why I Made This Website
       </h1>
         <p>
@@ -67,7 +69,10 @@ let styles = {
   profilePicture: {
     borderRadius: 15,
     width: 500,
-    height: 'auto'
+    height: 'auto',
+    borderStyle: 'solid',
+    borderWidth: 1,
+    borderColor: '#DAC4F7',
   },
   wrapper: {
     width: '50%',

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
-import { BrowserRouter as Router, Routes, Route}
+import { HashRouter as Router, Routes, Route}
     from 'react-router-dom';
 import Home from './pages/index';
 import About from './pages/about';
@@ -14,11 +14,11 @@ return (
     <Router>
     <Navbar />
     <Routes>
-        <Route path='/website' element={<Home />} />
-        <Route path='/website/about' element={<About/>} />                
-        <Route path='/website/qualifications' element={<Qualifications/>} />
-        <Route path='/website/links' element={<Links/>} />
-        <Route path='/website/contact' element={<Contact/>} />
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About/>} />                
+        <Route path='/qualifications' element={<Qualifications/>} />
+        <Route path='/links' element={<Links/>} />
+        <Route path='/contact' element={<Contact/>} />
     </Routes>
     </Router>
 );

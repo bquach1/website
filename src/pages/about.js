@@ -1,10 +1,9 @@
-import { tSModuleDeclaration } from "@babel/types";
 import React from "react";
 import '../css/about.css';
   
 const About = () => {
   return (
-    <div style={styles.wrapper} class="wrapper">
+    <div class="wrapper">
       <img style={styles.profilePicture} src={require('./images/personal_picture.jpg')} alt="Headshot"/>
       <h1 class="header">
         Greetings!
@@ -74,8 +73,4 @@ let styles = {
     borderWidth: 1,
     borderColor: '#DAC4F7',
   },
-  wrapper: {
-    width: '50%',
-    margin: 'auto',
-  }
 }

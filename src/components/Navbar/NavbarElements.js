@@ -6,15 +6,20 @@ export const Nav = styled.nav`
   background: #B80C09;
   height: 85px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   z-index: 12;
   font-weight:bolder;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 1%;
+  margin-top: 5px;
 `;
   
 export const NavLink = styled(Link)`
   color: #040F16;
   display: flex;
   align-items: center;
+  width: fit-content;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
@@ -22,6 +27,7 @@ export const NavLink = styled(Link)`
   &.active {
     color: #01BAEF;
   }
+  align-items: center;
 `;
   
 export const Bars = styled(FaBars)`

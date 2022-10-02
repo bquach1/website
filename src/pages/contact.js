@@ -2,7 +2,7 @@ import React from 'react';
   
 const Contact = () => {
   return (
-    <div class="wrapper">
+    <div style={styles.contactPage} class="wrapper">
       <h1>Get in Touch</h1>
         <h2>
           E-Mail:
@@ -21,7 +21,7 @@ const Contact = () => {
 
       <h1>Links</h1>
       <h1 class="unbold"><a href = 
-      "https://www.linkedin.com/in/bruce-quach-b90745111/" target="_blank" rel="noreferrer">LinkedIn</a>
+      "https://www.linkedin.com/in/bruce-quach/" target="_blank" rel="noreferrer">LinkedIn</a>
       </h1>
       <h1 class="unbold"><a href = 
       "https://github.com/bquach1" target="_blank" rel="noreferrer">GitHub</a>
@@ -31,3 +31,8 @@ const Contact = () => {
 };
   
 export default Contact;
+
+let styles = {
+  contactPage: {
+  }
+}

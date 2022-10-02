@@ -7,16 +7,16 @@ const Navbar = () => {
     <>
       <Nav>
         <NavMenu>
-          <NavLink to="/about" activeStyle>
+          <NavLink to="/website/about" activeStyle>
             About Me
           </NavLink>        
-          <NavLink to="/links" activeStyle>
+          <NavLink to="/website/links" activeStyle>
             Featured Projects
           </NavLink>
-          <NavLink to="/qualifications" activeStyle>
+          <NavLink to="/website/qualifications" activeStyle>
             CV/Resume and Credentials
           </NavLink>
-          <NavLink to="/contact" activeStyle>
+          <NavLink to="/website/contact" activeStyle>
             Contact Info
           </NavLink>          
         </NavMenu>

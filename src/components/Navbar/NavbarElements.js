@@ -13,6 +13,8 @@ export const Nav = styled.nav`
   margin: auto;
   margin-bottom: 1%;
   margin-top: 5px;
+  border-style: solid;
+  border-radius: 15px;
 `;
   
 export const NavLink = styled(Link)`

@@ -7,9 +7,9 @@ const Links = () => {
 
       <div class="project">
         <h1 class="label">Paws Your Day (Geaux Hack LSU Hackathon)</h1>
-        {/* <a href ="https://notify-soundbytes.web.app/" target="_blank" rel="noreferrer">
-        <embed type="image/png" src={require('./images/soundbytes.png')} width="100%" height="100%"></embed>  
-        </a>   */}
+        <a href ="https://bquach1.github.io/geaux-hack/" target="_blank" rel="noreferrer">
+        <embed type="image/png" src={require('./images/geaux-hack.png')} width="100%" height="100%"></embed>  
+        </a>  
         <p>
           Paws Your Day is a mental health assistance app that I was going
           to create with a team of 4-5 people for Geaux Hack, a hackathon at

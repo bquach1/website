@@ -2,22 +2,25 @@ import React from "react";
   
 const About = () => {
   return (
-    <div class="wrapper">
+    <div style={styles.wrapper} class="wrapper">
       <img style={styles.profilePicture} src={require('./images/personal_picture.jpg')} alt="Headshot"/>
       <h1>
         Greetings!
       </h1>
         <p>
-          Hi, I'm Bruce. I'm a second year computer science student at 
+          Hi, I'm Bruce. I'm a junior computer science student at 
           Louisiana State University.
         </p>
       <h1>
         Who I Am
       </h1>
         <p>
-          I'm an incoming technical intern at DXC
-          Technology in New Orleans for summer 2022 and member of 
-          the SciQuel web development team.
+          Aside from completing two years at LSU studying software engineering,
+          I'm also a Software Development Junior Associate at Rural Sourcing, Inc.
+          in the Baton Rouge development center, a web development intern at
+          SciQuel, a science media project and startup, and a senior student
+          worker at LSU IT Services. I'm always looking to expand my project
+          horizons and learn new skills.
         </p>  
       <h1>
         My Qualifications and Professional Interests
@@ -25,11 +28,15 @@ const About = () => {
         <p>
           I have a good deal of front-end development and some back-end
           development experiences from classwork and student worker experiences.
-          I'm working towards acquiring a CS degree with a concentration in
-          software engineering, so I'm primarily interested in that field.
-          I really like working with UI/UX development and learning more about
-          web API and framework development, though. Please see "Contact" info 
-          if interested in working with me, as I'm always willing 
+          I've also completed an internship in summer 2022 at DXC Technology, 
+          a software consulting company in New Orleans, LA, working with AWS and
+          MySQL databases to perform data ETL services, as well as a summer 2022 internship at
+          Runatek, a medtech startup in Dallas, Texas, working with React Native, Arduino
+          code, and materials to work towards creating useful and beneficial medical devices.
+          I'm working towards acquiring a software engineering degree, so I'm 
+          primarily interested in that field. I really like working with UI/UX development 
+          and learning more about web API and framework development, though. Please see 
+          "Contact" info if interested in working with me, as I'm always willing 
           to work with new people and learn more about software, web development,
           and other subjects!
         </p>
@@ -61,5 +68,9 @@ let styles = {
     borderRadius: 15,
     width: 500,
     height: 'auto'
+  },
+  wrapper: {
+    width: '50%',
+    margin: 'auto',
   }
 }

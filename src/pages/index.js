@@ -1,12 +1,33 @@
-import React from 'react';
-  
+import React from "react";
+import styled from "styled-components";
+
+const HomeWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  font-family: Roboto;
+`;
+
 const Home = () => {
   return (
-    <div class="content wrapper">
-      <h1>Welcome!</h1>
-      <h1>Welcome!</h1>
-    </div>
+    <HomeWrapper>
+      <div>Hello</div>
+    </HomeWrapper>
   );
 };
-  
+
 export default Home;
+
+let styles = {
+  profilePicture: {
+    borderRadius: 15,
+    width: 500,
+    height: "auto",
+    borderStyle: "solid",
+    borderWidth: 1,
+    borderColor: "#DAC4F7",
+  },
+};

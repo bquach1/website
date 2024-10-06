@@ -8,36 +8,75 @@ import {
   IconButton,
 } from "@mui/material";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import PandaIcon from "./panda.svg";
 
 const HeaderButton = styled(Button)`
   text-transform: none;
 `;
 
 function Header() {
+  const navigate = useNavigate();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="static"
         sx={{
-          background: "linear-gradient(45deg, #434343, #1c1c1c)", // Dark Chrome Gray Gradient
-          color: "#ffffff", // Text color (white)
+          background: "linear-gradient(45deg, #434343, #1c1c1c)",
+          color: "#ffffff",
         }}
       >
-        <Toolbar>
+        <Toolbar
+          style={{
+            display: "flex",
+            margin: "auto",
+            width: "90%",
+          }}
+        >
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
-          ></IconButton>
+          >
+            <img
+              src={PandaIcon}
+              alt="Panda icon"
+              style={{ width: "24px", height: "24px" }}
+            />
+          </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Bruce Quach
           </Typography>
-          <HeaderButton color="inherit">Home</HeaderButton>
-          <HeaderButton color="inherit">About</HeaderButton>
-          <HeaderButton color="inherit">Projects</HeaderButton>
-          <HeaderButton color="inherit">Contact</HeaderButton>
+          <HeaderButton
+            sx={{ textTransform: "none" }}
+            color="inherit"
+            onClick={() => navigate("/")}
+          >
+            About
+          </HeaderButton>
+          <HeaderButton
+            sx={{ textTransform: "none" }}
+            color="inherit"
+            onClick={() => navigate("/links")}
+          >
+            Projects
+          </HeaderButton>
+          <HeaderButton
+            sx={{ textTransform: "none" }}
+            color="inherit"
+            onClick={() => navigate("/resume")}
+          >
+            Skills and Resume/CSV
+          </HeaderButton>
+          <HeaderButton
+            sx={{ textTransform: "none" }}
+            color="inherit"
+            onClick={() => navigate("/contact")}
+          >
+            Contact
+          </HeaderButton>
         </Toolbar>
       </AppBar>
     </Box>

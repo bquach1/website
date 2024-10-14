@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import PandaIcon from "./panda.svg";
+import PandaIcon from "../assets/panda.svg";
 
 const HeaderButton = styled(Button)`
   text-transform: none;

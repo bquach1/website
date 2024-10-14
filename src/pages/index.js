@@ -2,32 +2,115 @@ import React from "react";
 import styled from "styled-components";
 
 const HomeWrapper = styled.div`
+  padding-top: 2%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 100vh;
-  background-color: black;
-  color: white;
-  font-family: Roboto;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  font-family: "Roboto", sans-serif;
+  color: #333;
+`;
+
+const Card = styled.div`
+  display: flex;
+  align-items: center;
+  width: 60%;
+  background-color: #f7f7f7;
+  color: #333;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 2%;
+`;
+
+const LeftCard = styled.div`
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  div:first-child {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  div:nth-child(2) {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+`;
+
+const ProfileImage = styled.img`
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+`;
+
+const Image = styled.img`
+  width: 200px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 `;
 
 const Home = () => {
   return (
     <HomeWrapper>
-      <div>Hello</div>
+      <Card>
+        <LeftCard>
+          <div>Hi, I'm Bruce</div>
+          <div>
+            I'm a passionate software developer with a keen interest in building
+            scalable and efficient applications. I love solving complex problems
+            and collaborating with teams to deliver high-quality products. I'm
+            always open to working with new technologies and contributing to fun
+            and/or useful projects.
+          </div>
+        </LeftCard>
+        <ProfileImage
+          src={require("../assets/profile_pic.png")}
+          alt="Bruce PFP"
+        />
+      </Card>
+      <Card>
+        <LeftCard>
+          <div>About Me</div>
+          <div>
+            I'm currently at PMG as a Software Engineer I working on the Data
+            team, focused on frontend development for proprietary marketing
+            tech.
+          </div>
+        </LeftCard>
+        <Image src={require("../assets/pmg_logo.png")} alt="PMG Logo" />
+      </Card>
+      <Card>
+        <LeftCard>
+          <div>About Me</div>
+          <div>
+            I'm currently at PMG as a Software Engineer I working on the Data
+            team, focused on frontend development for proprietary marketing
+            tech.
+          </div>
+        </LeftCard>
+        <ProfileImage src={require("../assets/profile_pic.png")} alt="Bruce" />
+      </Card>
+      <Card>
+        <LeftCard>
+          <div>About Me</div>
+          <div>
+            I'm currently at PMG as a Software Engineer I working on the Data
+            team, focused on frontend development for proprietary marketing
+            tech.
+          </div>
+        </LeftCard>
+        <ProfileImage src={require("../assets/profile_pic.png")} alt="Bruce" />
+      </Card>
     </HomeWrapper>
   );
 };
 
 export default Home;
-
-let styles = {
-  profilePicture: {
-    borderRadius: 15,
-    width: 500,
-    height: "auto",
-    borderStyle: "solid",
-    borderWidth: 1,
-    borderColor: "#DAC4F7",
-  },
-};

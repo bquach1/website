@@ -81,8 +81,10 @@ const Home = () => {
           <div>About Me</div>
           <div>
             I'm currently at PMG as a Software Engineer I working on the Data
-            team, focused on frontend development for proprietary marketing
-            tech.
+            pillar, focused on frontend development for proprietary marketing
+            tech. I graduated from Louisiana State University in May 2024 with a
+            Bachelor's in Computer Science concentrating in software
+            engineering, as well as minors in math and Chinese.
           </div>
         </LeftCard>
         <Image src={require("../assets/pmg_logo.png")} alt="PMG Logo" />
@@ -100,14 +102,25 @@ const Home = () => {
       </Card>
       <Card>
         <LeftCard>
-          <div>About Me</div>
+          <div>Fun Stuff</div>
           <div>
-            I'm currently at PMG as a Software Engineer I working on the Data
-            team, focused on frontend development for proprietary marketing
-            tech.
+            I'm a big fan of all things Snoopy and pandas. In my free time, I
+            like reviewing food on my&nbsp;
+            <a
+              href="https://www.instagram.com/master_of_flavors/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
+            </a>{" "}
+            (feel free to request to follow). I enjoy tracking the NBA, watching
+            shows and gaming in addition to making projects.
           </div>
         </LeftCard>
-        <ProfileImage src={require("../assets/profile_pic.png")} alt="Bruce" />
+        <ProfileImage
+          src={require("../assets/pickleball_snoopy.png")}
+          alt="Pickleball Snoopy"
+        />
       </Card>
     </HomeWrapper>
   );

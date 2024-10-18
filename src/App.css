@@ -25,22 +25,18 @@ h3 {
   margin-left: 2%;
 }
 
-html {
-  background-color:#D6F6DD;
-}
-
 .App {
   text-align: center;
-  justify-content:left;
+  justify-content: left;
 }
 
 #brand {
-	color: white;
+  color: white;
 }
 
 .wrapper {
-  padding:15px 25px 15px 25px;
-  background-color: #01BAEF;
+  padding: 15px 25px 15px 25px;
+  background-color: #01baef;
   justify-content: center;
   border-style: solid;
   width: 75%;
@@ -55,16 +51,16 @@ img {
 }
 
 .unbold {
-  font-weight:normal;
+  font-weight: normal;
 }
 
 .content {
-  background-color:black;
+  background-color: black;
   /* position: relative; */
-  text-align:center;
+  text-align: center;
   align-items: center;
   display: flex;
-  min-height:100vh;
+  min-height: 100vh;
   justify-content: center;
   font-family: "Poppins", sans-serif;
 }

@@ -66,7 +66,7 @@ const Home = () => {
           <div>
             I'm a passionate software developer with a keen interest in building
             scalable and efficient applications. I love solving complex problems
-            and collaborating with teams to deliver high-quality products. I'm
+            and collaborating in teams to deliver high-quality products. I'm
             always open to working with new technologies and contributing to fun
             and/or useful projects.
           </div>
@@ -88,17 +88,6 @@ const Home = () => {
           </div>
         </LeftCard>
         <Image src={require("../assets/pmg_logo.png")} alt="PMG Logo" />
-      </Card>
-      <Card>
-        <LeftCard>
-          <div>About Me</div>
-          <div>
-            I'm currently at PMG as a Software Engineer I working on the Data
-            team, focused on frontend development for proprietary marketing
-            tech.
-          </div>
-        </LeftCard>
-        <ProfileImage src={require("../assets/profile_pic.png")} alt="Bruce" />
       </Card>
       <Card>
         <LeftCard>

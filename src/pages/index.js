@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { IconButton } from "@mui/material";
+import { GitHub, LinkedIn } from "@mui/icons-material";
+import { ReactComponent as DevPost } from "../assets/devpost.svg";
 
 const HomeWrapper = styled.div`
   padding-top: 2%;
@@ -57,6 +60,12 @@ const Image = styled.img`
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 `;
 
+const IconFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+`;
+
 const Home = () => {
   return (
     <HomeWrapper>
@@ -91,17 +100,6 @@ const Home = () => {
       </Card>
       <Card>
         <LeftCard>
-          <div>About Me</div>
-          <div>
-            I'm currently at PMG as a Software Engineer I working on the Data
-            team, focused on frontend development for proprietary marketing
-            tech.
-          </div>
-        </LeftCard>
-        <ProfileImage src={require("../assets/profile_pic.png")} alt="Bruce" />
-      </Card>
-      <Card>
-        <LeftCard>
           <div>Fun Stuff</div>
           <div>
             I'm a big fan of all things Snoopy and pandas. In my free time, I
@@ -122,6 +120,37 @@ const Home = () => {
           alt="Pickleball Snoopy"
         />
       </Card>
+      <IconFooter>
+        <IconButton
+          size="large"
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+          rel="noreferrer"
+        >
+          <a href="https://github.com/bquach1" target="_blank">
+            <GitHub />
+          </a>
+        </IconButton>
+        <IconButton size="large" edge="start" color="inherit" aria-label="menu">
+          <a
+            href="https://www.linkedin.com/in/bruce-quach/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <LinkedIn />
+          </a>
+        </IconButton>
+        <IconButton size="large" edge="start" color="inherit" aria-label="menu">
+          <a
+            href="https://www.linkedin.com/in/bruce-quach/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <DevPost style={{ width: 25, height: 25 }} />
+          </a>
+        </IconButton>
+      </IconFooter>
     </HomeWrapper>
   );
 };

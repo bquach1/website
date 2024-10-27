@@ -75,7 +75,7 @@ const Home = () => {
           <div>
             I'm a passionate software developer with a keen interest in building
             scalable and efficient applications. I love solving complex problems
-            and collaborating with teams to deliver high-quality products. I'm
+            and collaborating in teams to deliver high-quality products. I'm
             always open to working with new technologies and contributing to fun
             and/or useful projects.
           </div>

@@ -11,25 +11,37 @@ import {
   AccordionDetails,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import LaptopIcon from "@mui/icons-material/Laptop";
+import InfoIcon from "@mui/icons-material/Info";
 import styled from "styled-components";
 
 const Wrapper = styled(Box)`
   padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 2%;
 `;
 
 const StyledCard = styled(Card)`
   max-width: 345px;
   border-radius: 20px;
   margin: 20px;
+  display: flex;
+  flex-direction: column; /* Make the card content stack vertically */
+  height: 100%; /* Ensure the card takes full height */
 
   &:hover {
     transform: scale(1.05);
     transition: 0.2s;
   }
+`;
+
+const FullWidthAccordion = styled(Accordion)`
+  width: 100%;
+  box-shadow: none;
 `;
 
 const Links = () => {
@@ -39,17 +51,19 @@ const Links = () => {
       href: "https://www.projectproudme.com/",
       imgSrc: require("./images/proudme_journal.png"),
       description:
-        "Project ProudME is a fullstack web application funded by Dr. Senlin Chen at LSU and his kinesiology lab. It helps middle school-aged children record activities to combat obesity.",
+        "Project ProudME is a fullstack web application funded by Dr. Senlin Chen at LSU and his kinesiology lab. It helps middle school-aged children record activities to combat obesity with an interactive journal, chart visualizations, and physical activity guides/curriculums.",
       techDetails:
-        "React.js, MongoDB, Node.js/Express.js, Render.com, Cloudflare, bcrypt.js, SendGrid API, Material UI.",
+        "React.js, MongoDB, Node.js/Express.js, Render.com, Cloudflare, bcrypt.js, SendGrid API, Material UI, Highcharts",
+      projectDetails:
+        "December 2022 - May 2024; independently completed fullstack web functionalities with UI/UX designer and project manager feedback.",
     },
     {
       title: "Paws Your Day",
       href: "https://bquach1.github.io/geaux-hack/",
       imgSrc: require("./images/geaux-hack.png"),
       description:
-        "Paws Your Day is a mental health assistance app built during Geaux Hack at LSU in Spring 2022. It provides wellness ratings and suggests exercises and sleep schedules.",
-      techDetails: "React, HTML/CSS, Sketch.js, Tone.js.",
+        "Paws Your Day is a mental health assistance app built during Geaux Hack at LSU. It provides wellness ratings and suggests exercises and sleep schedules.",
+      techDetails: "React.js, HTML/CSS, Sketch.js, Tone.js",
     },
     {
       title: "SoundBytes",
@@ -57,12 +71,13 @@ const Links = () => {
       imgSrc: require("./images/soundbytes.png"),
       description:
         "SoundBytes is a sound-based social media app created as a class project. It features sound uploads, social interactions, and search functionality.",
-      techDetails: "TypeScript, Firebase.",
+      techDetails: "TypeScript, Firebase",
     },
   ];
 
   return (
     <Wrapper>
+      <h2 style={{ marginBottom: "2%" }}>Projects</h2>
       <Stack
         direction="row"
         spacing={3}
@@ -89,23 +104,45 @@ const Links = () => {
               <Typography variant="body2" color="text.secondary">
                 {project.description}
               </Typography>
-              <Accordion>
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls={`panel-content-${index}`}
-                  id={`panel-header-${index}`}
-                >
+            </CardContent>
+            <FullWidthAccordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls={`panel-content-${index}`}
+                id={`panel-header-${index}`}
+              >
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <LaptopIcon />
                   <Typography variant="body2" color="text.secondary">
                     Tech Stack
                   </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Typography variant="caption" color="text.secondary">
-                    {project.techDetails}
+                </div>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography variant="caption" color="text.secondary">
+                  {project.techDetails}
+                </Typography>
+              </AccordionDetails>
+            </FullWidthAccordion>
+            <FullWidthAccordion>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls={`panel-content-${index}`}
+                id={`panel-header-${index}`}
+              >
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <InfoIcon />
+                  <Typography variant="body2" color="text.secondary">
+                    Project Details
                   </Typography>
-                </AccordionDetails>
-              </Accordion>
-            </CardContent>
+                </div>
+              </AccordionSummary>
+              <AccordionDetails>
+                <Typography variant="caption" color="text.secondary">
+                  {project.projectDetails}
+                </Typography>
+              </AccordionDetails>
+            </FullWidthAccordion>
           </StyledCard>
         ))}
       </Stack>

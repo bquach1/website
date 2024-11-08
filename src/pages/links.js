@@ -26,12 +26,11 @@ const Wrapper = styled(Box)`
 `;
 
 const StyledCard = styled(Card)`
-  max-width: 345px;
+  max-width: 400px;
   border-radius: 20px;
   margin: 20px;
   display: flex;
-  flex-direction: column; /* Make the card content stack vertically */
-  height: 100%; /* Ensure the card takes full height */
+  flex-direction: column;
 
   &:hover {
     transform: scale(1.05);
@@ -39,9 +38,26 @@ const StyledCard = styled(Card)`
   }
 `;
 
-const FullWidthAccordion = styled(Accordion)`
+const StyledTitle = styled(Typography)`
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+`;
+
+const ScrollableDescription = styled(Typography)`
+  max-height: 80px; /* Adjusted height for better visual balance */
+  overflow-y: auto;
+  color: #555;
+`;
+
+const AccordionContainer = styled(Accordion)`
   width: 100%;
   box-shadow: none;
+  border-top: 1px solid #ddd; /* Subtle border for separation */
+  &:first-of-type {
+    border-top: none;
+  }
 `;
 
 const Links = () => {
@@ -64,6 +80,8 @@ const Links = () => {
       description:
         "Paws Your Day is a mental health assistance app built during Geaux Hack at LSU. It provides wellness ratings and suggests exercises and sleep schedules.",
       techDetails: "React.js, HTML/CSS, Sketch.js, Tone.js",
+      projectDetails:
+        "Spring 2022; entry for a local hackathon with prompt to create a mental well-being app for college students. Novice skill level project.",
     },
     {
       title: "SoundBytes",
@@ -72,6 +90,8 @@ const Links = () => {
       description:
         "SoundBytes is a sound-based social media app created as a class project. It features sound uploads, social interactions, and search functionality.",
       techDetails: "TypeScript, Firebase",
+      projectDetails:
+        "Spring 2022; object-oriented programming class semester project. Mostly involved with backend work in TypeScript.",
     },
   ];
 
@@ -90,22 +110,20 @@ const Links = () => {
             <a href={project.href} target="_blank" rel="noreferrer">
               <CardMedia
                 component="img"
-                height="200"
+                height="180" /* Adjusted height for mobile optimization */
                 image={project.imgSrc}
                 alt={project.title}
               />
             </a>
             <CardContent>
               <a href={project.href} target="_blank" rel="noreferrer">
-                <Typography variant="h6" component="div">
-                  {project.title}
-                </Typography>
+                <StyledTitle>{project.title}</StyledTitle>
               </a>
-              <Typography variant="body2" color="text.secondary">
+              <ScrollableDescription variant="body2" color="text.secondary">
                 {project.description}
-              </Typography>
+              </ScrollableDescription>
             </CardContent>
-            <FullWidthAccordion>
+            <AccordionContainer>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls={`panel-content-${index}`}
@@ -113,7 +131,11 @@ const Links = () => {
               >
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <LaptopIcon />
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ ml: 1 }}
+                  >
                     Tech Stack
                   </Typography>
                 </div>
@@ -123,8 +145,8 @@ const Links = () => {
                   {project.techDetails}
                 </Typography>
               </AccordionDetails>
-            </FullWidthAccordion>
-            <FullWidthAccordion>
+            </AccordionContainer>
+            <AccordionContainer>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls={`panel-content-${index}`}
@@ -132,7 +154,11 @@ const Links = () => {
               >
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <InfoIcon />
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ ml: 1 }}
+                  >
                     Project Details
                   </Typography>
                 </div>
@@ -142,7 +168,7 @@ const Links = () => {
                   {project.projectDetails}
                 </Typography>
               </AccordionDetails>
-            </FullWidthAccordion>
+            </AccordionContainer>
           </StyledCard>
         ))}
       </Stack>

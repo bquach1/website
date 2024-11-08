@@ -143,7 +143,7 @@ const Home = () => {
         </IconButton>
         <IconButton size="large" edge="start" color="inherit" aria-label="menu">
           <a
-            href="https://www.linkedin.com/in/bruce-quach/"
+            href="https://devpost.com/bquach1"
             target="_blank"
             rel="noreferrer"
           >

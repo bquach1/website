@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/index";
 import Links from "./pages/links";
 import Contact from "./pages/contact";
-import Qualifications from "./pages/qualifications";
+import Skills from "./pages/skills";
 import "./css/scrollbar.css";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/website" element={<Home />} />
-        <Route path="/qualifications" element={<Qualifications />} />
+        <Route path="/skills" element={<Skills />} />
         <Route path="/links" element={<Links />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

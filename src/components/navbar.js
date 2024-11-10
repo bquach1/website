@@ -66,7 +66,7 @@ function Header() {
           <HeaderButton
             sx={{ textTransform: "none" }}
             color="inherit"
-            onClick={() => navigate("/resume")}
+            onClick={() => navigate("/skills")}
           >
             Skills and Resume/CSV
           </HeaderButton>

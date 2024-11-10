@@ -22,7 +22,8 @@ const Wrapper = styled(Box)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2%;
+  padding-bottom: 2%;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
 `;
 
 const StyledCard = styled(Card)`
@@ -31,6 +32,7 @@ const StyledCard = styled(Card)`
   margin: 20px;
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
 
   &:hover {
     transform: scale(1.05);

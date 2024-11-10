@@ -1,22 +1,24 @@
 {
   "files": {
     "main.css": "/website/static/css/main.6cf377ba.css",
-    "main.js": "/website/static/js/main.321c8350.js",
+    "main.js": "/website/static/js/main.b0f07732.js",
     "static/media/profile_pic.png": "/website/static/media/profile_pic.c27b4f7df597c7cdc88e.png",
     "static/media/proudme_journal.png": "/website/static/media/proudme_journal.ca1d1a964b32d141ef0f.png",
     "static/media/gus-sonny-angels.png": "/website/static/media/gus-sonny-angels.6a1a25b617ab126bb47b.png",
+    "static/media/psy-ki.png": "/website/static/media/psy-ki.5da071eeffbc3fc9080d.png",
+    "static/media/sepsis-diagnosis-tool.png": "/website/static/media/sepsis-diagnosis-tool.d7dfd3e0aa71403f6bc9.png",
     "static/media/soundbytes.png": "/website/static/media/soundbytes.e64f58592c22737dd8d1.png",
     "static/media/pickleball_snoopy.png": "/website/static/media/pickleball_snoopy.b4c140fc8274624ad3fa.png",
     "static/media/geaux-hack.png": "/website/static/media/geaux-hack.c3c5fa9931881bcdd02d.png",
     "static/media/palate-passport.png": "/website/static/media/palate-passport.c05b5a3c3e39891fb901.png",
-    "static/media/panda.svg": "/website/static/media/panda.c4611d44b2ea5f69da95d3a64f20f35b.svg",
+    "static/media/panda.svg": "/website/static/media/panda.2311dcacaa980e0fba678b785c3b8e1b.svg",
     "index.html": "/website/index.html",
     "static/media/devpost.svg": "/website/static/media/devpost.8af03093a9c66fecfb2c51d322280d3d.svg",
     "main.6cf377ba.css.map": "/website/static/css/main.6cf377ba.css.map",
-    "main.321c8350.js.map": "/website/static/js/main.321c8350.js.map"
+    "main.b0f07732.js.map": "/website/static/js/main.b0f07732.js.map"
   },
   "entrypoints": [
     "static/css/main.6cf377ba.css",
-    "static/js/main.321c8350.js"
+    "static/js/main.b0f07732.js"
   ]
 }

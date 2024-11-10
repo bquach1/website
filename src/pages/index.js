@@ -111,8 +111,8 @@ const Home = () => {
             >
               Instagram
             </a>{" "}
-            (feel free to request to follow). I enjoy tracking the NBA, watching
-            shows and gaming in addition to making projects.
+            (feel free to follow). I enjoy tracking the NBA, watching shows and
+            gaming in addition to making projects.
           </div>
         </LeftCard>
         <ProfileImage

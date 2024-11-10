@@ -87,16 +87,28 @@ const Links = () => {
       githubLink: "https://github.com/bquach1/project_proudme",
     },
     {
-      title: "Sepsis Diagnosis Tool",
-      href: "https://www.projectproudme.com/",
-      imgSrc: require("./images/proudme_journal.png"),
+      title: "Psy-ki",
+      href: "https://sasehack2023.onrender.com/",
+      imgSrc: require("./images/psy-ki.png"),
       description:
-        "Project ProudME is a fullstack web application funded by Dr. Senlin Chen at LSU and his kinesiology lab. It helps middle school-aged children record activities to combat obesity with an interactive journal, chart visualizations, and physical activity guides/curriculums.",
+        "Psy-Ki is a mental health assistance app that allows users to track their feelings and summaries about their days. It also uses GPT4 to provide chatbot functionalities focused around therapeutic advice, as well as feedback on how to improve themselves.",
       techDetails:
-        "React.js, MongoDB, Node.js/Express.js, Render.com, Cloudflare, bcrypt.js, SendGrid API, Material UI, Highcharts",
+        "React.js, MongoDB, Flask, Ant Design, Material UI, OpenAI/GPT APIs",
       projectDetails:
-        "December 2022 - May 2024; independently completed fullstack web functionalities with UI/UX designer and project manager feedback.",
-      githubLink: "https://github.com/bquach1/project_proudme",
+        "Fall 2023; submission for the SASE (Society of Asian Scientists and Engineers) national convention hackathon surrounding mental wellness as a prompt.",
+      githubLink: "https://github.com/bquach1/sasehack2023",
+    },
+    {
+      title: "Sepsis Diagnosis Tool",
+      href: "https://www.lsu.edu/winning-teams/2024-25/sepsis-diagnosis.php",
+      imgSrc: require("./images/sepsis-diagnosis-tool.png"),
+      description:
+        "This sepsis diagnosis tool leverages LangChain and machine learning models to predict sepsis onset in patients using clinical data, aiming to support early diagnosis and improve patient outcomes. The proof of concept was developed in collaboration with critical care specialists at Our Lady of the Lake Medical Center in Baton Rouge, along with the medical diagnostics company Cytovale.",
+      techDetails:
+        "LLM Architecture/LangChain, Fine-Tuning Models, React.js, Flask",
+      projectDetails:
+        "Spring 2024 honors course project for LLM Application Development/Deployment; worked briefly on fullstack application but focused on refining fine-tuning model for patient data.",
+      githubLink: "https://github.com/blakebollinger/sepsis-diagnosis",
     },
     {
       title: "Palate Passport",
@@ -136,7 +148,7 @@ const Links = () => {
 
   return (
     <Wrapper>
-      <h2 style={{ marginBottom: "2%" }}>Projects</h2>
+      <h2 style={{ marginBottom: "2%" }}>Notable Projects</h2>
       <Stack
         direction="row"
         spacing={3}

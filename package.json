@@ -2,7 +2,7 @@
   "name": "website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bquach1.github.io/website",
+  "homepage": ".",
   "dependencies": {
     "-": "^0.0.1",
     "@emotion/react": "^11.13.3",

@@ -8,16 +8,20 @@ import {
   IconButton,
 } from "@mui/material";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import PandaIcon from "../assets/panda.svg";
 
 const HeaderButton = styled(Button)`
   text-transform: none;
+  color: white;
 `;
 
-function Header() {
-  const navigate = useNavigate();
+const activeLinkStyle = {
+  textDecoration: "underline",
+  fontWeight: "bold",
+};
 
+function Header() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
@@ -34,6 +38,7 @@ function Header() {
             width: "90%",
           }}
         >
+          {/* Icon Section */}
           <IconButton
             size="large"
             edge="start"
@@ -46,37 +51,42 @@ function Header() {
               style={{ width: "24px", height: "24px" }}
             />
           </IconButton>
+
+          {/* Title */}
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Bruce Quach
           </Typography>
-          <HeaderButton
-            sx={{ textTransform: "none" }}
-            color="inherit"
-            onClick={() => navigate("/")}
+
+          {/* Navigation Links */}
+          <NavLink
+            to="/"
+            style={({ isActive }) => (isActive ? activeLinkStyle : null)}
           >
-            About
-          </HeaderButton>
-          <HeaderButton
-            sx={{ textTransform: "none" }}
-            color="inherit"
-            onClick={() => navigate("/links")}
+            <HeaderButton sx={{ textTransform: "none" }}>About</HeaderButton>
+          </NavLink>
+
+          <NavLink
+            to="/links"
+            style={({ isActive }) => (isActive ? activeLinkStyle : null)}
           >
-            Projects
-          </HeaderButton>
-          <HeaderButton
-            sx={{ textTransform: "none" }}
-            color="inherit"
-            onClick={() => navigate("/skills")}
+            <HeaderButton sx={{ textTransform: "none" }}>Projects</HeaderButton>
+          </NavLink>
+
+          <NavLink
+            to="/skills"
+            style={({ isActive }) => (isActive ? activeLinkStyle : null)}
           >
-            Skills and Resume/CSV
-          </HeaderButton>
-          <HeaderButton
-            sx={{ textTransform: "none" }}
-            color="inherit"
-            onClick={() => navigate("/contact")}
+            <HeaderButton sx={{ textTransform: "none" }}>
+              Skills and Resume/CSV
+            </HeaderButton>
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            style={({ isActive }) => (isActive ? activeLinkStyle : null)}
           >
-            Contact
-          </HeaderButton>
+            <HeaderButton sx={{ textTransform: "none" }}>Contact</HeaderButton>
+          </NavLink>
         </Toolbar>
       </AppBar>
     </Box>

@@ -8,10 +8,8 @@ import "react-vertical-timeline-component/style.min.css";
 import SchoolIcon from "@mui/icons-material/School";
 import WorkIcon from "@mui/icons-material/Work";
 import LocationOn from "@mui/icons-material/LocationOn";
-import LightbulbIcon from "@mui/icons-material/Lightbulb";
 
 import styled from "styled-components";
-import Tooltip from "@mui/material/Tooltip";
 
 const QualificationsWrapper = styled.div`
   .sub-list {

@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./components/navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom"; // Update: Use Routes instead of Switch
 import Home from "./pages/index";
 import Links from "./pages/links";
 import Contact from "./pages/contact";
@@ -10,7 +10,7 @@ import "./css/scrollbar.css";
 
 function App() {
   return (
-    <Router>
+    <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -19,7 +19,7 @@ function App() {
         <Route path="/links" element={<Links />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-    </Router>
+    </div>
   );
 }
 

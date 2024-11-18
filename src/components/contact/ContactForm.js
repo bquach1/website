@@ -1,95 +1,82 @@
 import React from "react";
-import { useForm } from "react-hook-form";
-import emailjs from "emailjs-com";
+import {
+  Box,
+  TextField,
+  Button,
+  Typography,
+  Card,
+  CardContent,
+  Tooltip,
+} from "@mui/material";
+import InfoIcon from "@mui/icons-material/Info";
 
 const ContactForm = () => {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = (data) => {
-    const serviceId = "service_fswj57o";
-    const templateId = "template_we3pbu3";
-    const userId = "SHDLQUE3lEq6avrDr";
-
-    const emailData = {
-      ...data,
-      from_name: data.name,
-      to_name: "Bruce",
-      message: data.message,
-      from_email: data.email,
-      reply_to: data.email,
-    };
-
-    emailjs
-      .send(serviceId, templateId, emailData, userId)
-      .then((response) => {
-        alert("Message sent successfully!");
-        reset();
-      })
-      .catch((error) => {
-        console.error("Error sending email:", error);
-        alert("Failed to send message. Please try again later.");
-      });
-  };
-
   return (
-    <div style={{ maxWidth: "500px", margin: "0 auto", padding: "1rem" }}>
-      <h2>Contact Me</h2>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
-      >
-        <label>
-          Name:
-          <input
-            type="text"
-            {...register("name", { required: "Name is required" })}
-            placeholder="Your Name"
-          />
-          {errors.name && (
-            <span style={{ color: "red" }}>{errors.name.message}</span>
-          )}
-        </label>
-        <label>
-          Email:
-          <input
-            type="email"
-            {...register("email", { required: "Email is required" })}
-            placeholder="Your Email"
-          />
-          {errors.email && (
-            <span style={{ color: "red" }}>{errors.email.message}</span>
-          )}
-        </label>
-        <label>
-          Message:
-          <textarea
-            {...register("message", { required: "Message is required" })}
-            placeholder="Your Message"
-            rows="5"
-          ></textarea>
-          {errors.message && (
-            <span style={{ color: "red" }}>{errors.message.message}</span>
-          )}
-        </label>
-        <button
-          type="submit"
-          style={{
-            padding: "0.5rem 1rem",
-            background: "#007BFF",
-            color: "#fff",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          Send Message
-        </button>
-      </form>
-    </div>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "92vh",
+        backgroundColor: "#f3f4f6",
+      }}
+    >
+      <Card sx={{ width: "50%", padding: 3, boxShadow: 3 }}>
+        <CardContent>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              paddingBottom: 10,
+            }}
+          >
+            <Tooltip
+              title="Any questions, feedback, or requests? Feel free to fill out this form and send an email!"
+              placement="top"
+            >
+              <InfoIcon style={{ marginRight: 10 }} />
+            </Tooltip>
+            <Typography variant="h5" component="h2">
+              Contact Me
+            </Typography>
+          </div>
+          <Box
+            component="form"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+            }}
+          >
+            <TextField label="Name" variant="outlined" fullWidth required />
+            <TextField
+              label="Email"
+              variant="outlined"
+              type="email"
+              fullWidth
+              required
+            />
+            <TextField
+              label="Message"
+              variant="outlined"
+              multiline
+              rows={4}
+              fullWidth
+              required
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              sx={{ mt: 2 }}
+            >
+              Send Message
+            </Button>
+          </Box>
+        </CardContent>
+      </Card>
+    </Box>
   );
 };
 

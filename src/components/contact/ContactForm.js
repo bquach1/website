@@ -15,8 +15,17 @@ const ContactForm = () => {
     const templateId = "template_we3pbu3";
     const userId = "SHDLQUE3lEq6avrDr";
 
+    const emailData = {
+      ...data,
+      from_name: data.name,
+      to_name: "Bruce",
+      message: data.message,
+      from_email: data.email,
+      reply_to: data.email,
+    };
+
     emailjs
-      .send(serviceId, templateId, data, userId)
+      .send(serviceId, templateId, emailData, userId)
       .then((response) => {
         alert("Message sent successfully!");
         reset();

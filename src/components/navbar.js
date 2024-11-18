@@ -62,21 +62,25 @@ function Header() {
             to="/"
             style={({ isActive }) => (isActive ? activeLinkStyle : null)}
           >
-            <HeaderButton sx={{ textTransform: "none" }}>About</HeaderButton>
+            <HeaderButton sx={{ color: "white", textTransform: "none" }}>
+              About
+            </HeaderButton>
           </NavLink>
 
           <NavLink
             to="/links"
             style={({ isActive }) => (isActive ? activeLinkStyle : null)}
           >
-            <HeaderButton sx={{ textTransform: "none" }}>Projects</HeaderButton>
+            <HeaderButton sx={{ color: "white", textTransform: "none" }}>
+              Projects
+            </HeaderButton>
           </NavLink>
 
           <NavLink
             to="/skills"
             style={({ isActive }) => (isActive ? activeLinkStyle : null)}
           >
-            <HeaderButton sx={{ textTransform: "none" }}>
+            <HeaderButton sx={{ color: "white", textTransform: "none" }}>
               Skills and Resume/CSV
             </HeaderButton>
           </NavLink>
@@ -85,7 +89,9 @@ function Header() {
             to="/contact"
             style={({ isActive }) => (isActive ? activeLinkStyle : null)}
           >
-            <HeaderButton sx={{ textTransform: "none" }}>Contact</HeaderButton>
+            <HeaderButton sx={{ color: "white", textTransform: "none" }}>
+              Contact
+            </HeaderButton>
           </NavLink>
         </Toolbar>
       </AppBar>

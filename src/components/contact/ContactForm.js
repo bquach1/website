@@ -1,4 +1,6 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import emailjs from "emailjs-com";
 import {
   Box,
   TextField,
@@ -11,6 +13,36 @@ import {
 import InfoIcon from "@mui/icons-material/Info";
 
 const ContactForm = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    const serviceId = "service_fswj57o";
+    const templateId = "template_we3pbu3";
+    const userId = "SHDLQUE3lEq6avrDr";
+    const emailData = {
+      from_name: data.name,
+      to_name: "Bruce",
+      message: data.message,
+      from_email: data.email,
+      reply_to: data.email,
+    };
+
+    emailjs
+      .send(serviceId, templateId, emailData, userId)
+      .then(() => {
+        alert("Message sent successfully!");
+        reset();
+      })
+      .catch(() => {
+        alert("Failed to send message. Please try again later.");
+      });
+  };
+
   return (
     <Box
       sx={{
@@ -19,16 +51,17 @@ const ContactForm = () => {
         alignItems: "center",
         height: "92vh",
         backgroundColor: "#f3f4f6",
+        padding: 2,
       }}
     >
-      <Card sx={{ width: "50%", padding: 3, boxShadow: 3 }}>
+      <Card sx={{ width: "100%", maxWidth: 500, padding: 3, boxShadow: 3 }}>
         <CardContent>
-          <div
-            style={{
+          <Box
+            sx={{
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              paddingBottom: 10,
+              marginBottom: 2,
             }}
           >
             <Tooltip
@@ -40,22 +73,29 @@ const ContactForm = () => {
             <Typography variant="h5" component="h2">
               Contact Me
             </Typography>
-          </div>
-          <Box
-            component="form"
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 2,
-            }}
+          </Box>
+
+          {/* Form Section */}
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
           >
-            <TextField label="Name" variant="outlined" fullWidth required />
+            <TextField
+              label="Name"
+              variant="outlined"
+              fullWidth
+              {...register("name", { required: "Name is required" })}
+              error={!!errors.name}
+              helperText={errors.name?.message}
+            />
             <TextField
               label="Email"
               variant="outlined"
               type="email"
               fullWidth
-              required
+              {...register("email", { required: "Email is required" })}
+              error={!!errors.email}
+              helperText={errors.email?.message}
             />
             <TextField
               label="Message"
@@ -63,7 +103,9 @@ const ContactForm = () => {
               multiline
               rows={4}
               fullWidth
-              required
+              {...register("message", { required: "Message is required" })}
+              error={!!errors.message}
+              helperText={errors.message?.message}
             />
             <Button
               type="submit"
@@ -73,7 +115,7 @@ const ContactForm = () => {
             >
               Send Message
             </Button>
-          </Box>
+          </form>
         </CardContent>
       </Card>
     </Box>

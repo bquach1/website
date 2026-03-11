@@ -89,11 +89,11 @@ const Home = () => {
         <LeftCard>
           <div>About Me</div>
           <div>
-            I'm currently at PMG as a Software Engineer I working on the Data
-            pillar, focused on frontend development for proprietary marketing
-            tech. I graduated from Louisiana State University in May 2024 with a
-            Bachelor's in Computer Science concentrating in software
-            engineering, as well as minors in math and Chinese.
+            I'm currently at PMG as an AI & Software Engineer II working on the
+            Data pillar, focused on frontend development for proprietary
+            marketing tech. I graduated from Louisiana State University in May
+            2024 with a Bachelor's in Computer Science concentrating in software
+            engineering, as well as minors in mathematics and Chinese.
           </div>
         </LeftCard>
         <Image src={require("../assets/pmg_logo.png")} alt="PMG Logo" />

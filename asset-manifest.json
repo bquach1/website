@@ -1,15 +1,13 @@
 {
   "files": {
     "main.css": "/website/static/css/main.d1aa82b3.css",
-    "main.js": "/website/static/js/main.2919d7e2.js",
+    "main.js": "/website/static/js/main.789d3353.js",
     "static/media/profile_pic.png": "/website/static/media/profile_pic.c27b4f7df597c7cdc88e.png",
     "static/media/proudme_journal.png": "/website/static/media/proudme_journal.ca1d1a964b32d141ef0f.png",
     "static/media/gus-sonny-angels.png": "/website/static/media/gus-sonny-angels.6a1a25b617ab126bb47b.png",
     "static/media/psy-ki.png": "/website/static/media/psy-ki.5da071eeffbc3fc9080d.png",
     "static/media/sepsis-diagnosis-tool.png": "/website/static/media/sepsis-diagnosis-tool.d7dfd3e0aa71403f6bc9.png",
-    "static/media/cv.pdf": "/website/static/media/cv.61dca4d10140f3b285bc.pdf",
-    "static/media/pufferjacket-snoopy.jpg": "/website/static/media/pufferjacket-snoopy.b24fe1d478a3357f7b30.jpg",
-    "static/media/resume.pdf": "/website/static/media/resume.4d2fe66a8b1a835f942b.pdf",
+    "static/media/resume.pdf": "/website/static/media/resume.2d1efbf43bd93b59bfe5.pdf",
     "static/media/soundbytes.png": "/website/static/media/soundbytes.e64f58592c22737dd8d1.png",
     "static/media/pickleball_snoopy.png": "/website/static/media/pickleball_snoopy.b4c140fc8274624ad3fa.png",
     "static/media/geaux-hack.png": "/website/static/media/geaux-hack.c3c5fa9931881bcdd02d.png",
@@ -17,7 +15,6 @@
     "static/media/mongodb-svgrepo-com.svg": "/website/static/media/mongodb-svgrepo-com.1dc47c60f9d90afc1e171c4529af5966.svg",
     "static/media/nodejs-svgrepo-com.svg": "/website/static/media/nodejs-svgrepo-com.b0d6c7cead1cf51d8ac0b40bf3637dce.svg",
     "static/media/postgresql-svgrepo-com.svg": "/website/static/media/postgresql-svgrepo-com.9aed68683d15cfc3c3fd8ddf1d89ff4e.svg",
-    "static/media/candycorn-snoopy.jpg": "/website/static/media/candycorn-snoopy.ac6e490911d51e9df091.jpg",
     "static/media/mysql-svgrepo-com.svg": "/website/static/media/mysql-svgrepo-com.62dc0a29b1bdc4c48f11538413de53ba.svg",
     "static/media/typescript-svgrepo-com.svg": "/website/static/media/typescript-svgrepo-com.c0eb7115ca99c9b18ba0baf90f610f7d.svg",
     "static/media/react-svgrepo-com.svg": "/website/static/media/react-svgrepo-com.22a05374f4eefdd120b71df3f98d68a1.svg",
@@ -30,10 +27,10 @@
     "static/media/js-svgrepo-com.svg": "/website/static/media/js-svgrepo-com.692ca1eff79b74eb3edd77bd8bd33dfb.svg",
     "static/media/devpost.svg": "/website/static/media/devpost.8af03093a9c66fecfb2c51d322280d3d.svg",
     "main.d1aa82b3.css.map": "/website/static/css/main.d1aa82b3.css.map",
-    "main.2919d7e2.js.map": "/website/static/js/main.2919d7e2.js.map"
+    "main.789d3353.js.map": "/website/static/js/main.789d3353.js.map"
   },
   "entrypoints": [
     "static/css/main.d1aa82b3.css",
-    "static/js/main.2919d7e2.js"
+    "static/js/main.789d3353.js"
   ]
 }

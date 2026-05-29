@@ -29,6 +29,7 @@ function Header() {
         sx={{
           background: "linear-gradient(45deg, #434343, #1c1c1c)",
           color: "#ffffff",
+          boxShadow: "0 8px 24px rgba(0, 0, 0, 0.28)",
         }}
       >
         <Toolbar

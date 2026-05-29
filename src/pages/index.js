@@ -102,14 +102,23 @@ const Home = () => {
         <LeftCard>
           <div>Fun Stuff</div>
           <div>
-            I'm a big fan of all things Snoopy and pandas. In my free time, I
-            like reviewing food on my&nbsp;
+            I'm a big foodie, fan of Snoopy and pandas, and enjoy collecting and
+            playing trading card games (namely One Piece, Riftbound, and
+            Pokemon). In my free time, I like reviewing food on my&nbsp;
             <a
               href="https://www.instagram.com/master_of_flavors/"
               target="_blank"
               rel="noreferrer"
             >
               Instagram
+            </a>{" "}
+            and posting{" "}
+            <a
+              href="https://www.instagram.com/master_of_rips/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              trading card content
             </a>{" "}
             (feel free to follow). I enjoy tracking the NBA, watching shows and
             gaming in addition to making projects.

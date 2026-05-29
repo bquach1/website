@@ -1,35 +1,25 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Modal, Box, Button, Typography, Stack } from "@mui/material";
 import { Document, Page } from "react-pdf";
 import { pdfjs } from "react-pdf";
 
-import Puffer from "../../pages/images/pufferjacket-snoopy.jpg";
-import CandyCorn from "../../pages/images/candycorn-snoopy.jpg";
 import Resume from "../../pages/images/resume/resume.pdf";
-import CV from "../../pages/images/resume/cv.pdf";
 
-import "react-pdf/dist/esm/Page/AnnotationLayer.css"; // For annotation layer styles
-import "react-pdf/dist/esm/Page/TextLayer.css"; // For text layer styles
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/esm/Page/TextLayer.css";
 
-// Set the worker URL for react-pdf
 pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@4.4.168/build/pdf.worker.mjs`;
 
 const PdfViewer = () => {
   const [open, setOpen] = useState(false);
   const [selectedPdf, setSelectedPdf] = useState(null);
   const [numPages, setNumPages] = useState(null);
-  const [error, setError] = useState(null); // For error handling
+  const [error, setError] = useState(null);
 
   const pdfs = [
     {
       name: "Current Resume",
       src: Resume,
-      thumbnail: Puffer,
-    },
-    {
-      name: "CV (College to Present)",
-      src: CV,
-      thumbnail: CandyCorn,
     },
   ];
 
@@ -67,29 +57,47 @@ const PdfViewer = () => {
           <Box
             key={index}
             sx={{
-              border: "1px solid #ccc",
-              borderRadius: "8px",
-              padding: 2,
+              border: "1px solid rgba(28, 42, 75, 0.12)",
+              borderRadius: "12px",
+              padding: 2.5,
               textAlign: "center",
               cursor: "pointer",
-              width: "200px",
-              "&:hover": { boxShadow: 4 },
+              width: "220px",
+              backgroundColor: "#fff",
+              transition: "transform 0.2s ease, box-shadow 0.2s ease",
+              "&:hover": {
+                boxShadow: "0 8px 24px rgba(17, 24, 39, 0.12)",
+                transform: "translateY(-2px)",
+              },
             }}
             onClick={() => handleOpen(pdf)}
           >
-            <img
-              src={pdf.thumbnail}
-              alt={pdf.name}
-              style={{ maxWidth: "100%", borderRadius: "4px" }}
-            />
-            <Typography variant="subtitle1" mt={1}>
-              {pdf.name}
-            </Typography>
+            <Box
+              sx={{
+                width: "100%",
+                height: "240px",
+                borderRadius: "8px",
+                background:
+                  "linear-gradient(180deg, rgba(25,118,210,0.12) 0%, rgba(25,118,210,0.05) 100%)",
+                border: "1px solid rgba(25,118,210,0.2)",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#1b2b52",
+              }}
+              aria-label="Resume icon"
+            >
+              <Typography sx={{ fontSize: "3rem", lineHeight: 1 }}>
+                📄
+              </Typography>
+              <Typography sx={{ fontWeight: 700, letterSpacing: "0.08em" }}>
+                RESUME
+              </Typography>
+            </Box>
           </Box>
         ))}
       </Stack>
-
-      {/* Modal to view the selected PDF */}
       <Modal
         open={open}
         onClose={handleClose}
@@ -112,9 +120,6 @@ const PdfViewer = () => {
         >
           {selectedPdf && (
             <>
-              <Typography variant="h6" gutterBottom>
-                {selectedPdf.name}
-              </Typography>
               {error && (
                 <Typography color="error" variant="body2" gutterBottom>
                   {error}
@@ -126,14 +131,29 @@ const PdfViewer = () => {
                 onLoadError={onLoadError}
               >
                 {Array.from(new Array(numPages), (_, index) => (
-                  <div style={{ display: "flex", justifyContent: "center" }}>
-                    <Page key={index} pageNumber={index + 1} />
+                  <div
+                    key={index}
+                    style={{ display: "flex", justifyContent: "center" }}
+                  >
+                    <Page pageNumber={index + 1} />
                   </div>
                 ))}
               </Document>
-              <Button onClick={handleClose} variant="contained" sx={{ mt: 2 }}>
-                Close
-              </Button>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  marginTop: "16px",
+                }}
+              >
+                <Button
+                  onClick={handleClose}
+                  variant="contained"
+                  sx={{ mt: 2 }}
+                >
+                  Close
+                </Button>
+              </div>
             </>
           )}
         </Box>

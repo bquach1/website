@@ -65,6 +65,18 @@ const AccordionContainer = styled(Accordion)`
 const Links = () => {
   const projects = [
     {
+      title: "Repository of Rips",
+      href: "https://repository-of-rips.vercel.app/",
+      imgSrc:
+        "https://public.getcollectr.com/public-assets/products/product_712743.jpg?optimizer=image&format=webp&width=1200&quality=80&strip=metadata",
+      description:
+        "Repository of Rips is a TCG portfolio tracker and spend analyzer for monitoring card collections, market value, profit and loss, and related spending across One Piece, Pokemon, and Riftbound.",
+      techDetails: "React.js, JavaScript, Python, Plaid, Playwright, Vercel",
+      projectDetails:
+        "2026; built a card collection and financial tracking experience with Collectr portfolio exports and Chase, Venmo, and Zelle spend synchronization.",
+      githubLink: "https://github.com/bquach1/repository_of_rips",
+    },
+    {
       title: "Gus' Sonny Angel Collectors' Log",
       href: "https://gus-sonny-angels.onrender.com/",
       imgSrc: require("./images/gus-sonny-angels.png"),

@@ -47,15 +47,19 @@ const SkillsWrapper = styled.div`
   width: 90%;
   margin: 40px auto;
   padding: 30px;
-  background: linear-gradient(135deg, #ffffff, #f7f9fc);
+  background: linear-gradient(
+    135deg,
+    var(--dark-surface-hover),
+    var(--page-background)
+  );
   border-radius: 15px;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.4);
 `;
 
 const Title = styled(Typography)`
   font-size: 2.5rem;
   font-weight: bold;
-  color: #333;
+  color: var(--accent);
   padding-bottom: 20px;
 `;
 
@@ -71,24 +75,27 @@ const SkillItem = styled(Box)`
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  background: #ffffff;
+  background: var(--accent-muted);
   border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid #eeeeee;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--surface-border);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:hover {
     cursor: pointer;
     transform: translateY(-6px);
-    box-shadow: 0px 8px 20px rgba(102, 187, 106, 0.5);
-    border-color: #66bb6a;
+    box-shadow: 0px 8px 20px rgba(226, 167, 125, 0.25);
+    border-color: var(--accent);
+    background: var(--dark-surface-hover);
   }
 `;
 
 const SkillText = styled(Typography)`
   font-size: 1rem;
   font-weight: 600;
-  color: #555;
+  color: var(--text-primary);
 `;
 
 const SkillIcon = styled.img`

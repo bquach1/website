@@ -5,7 +5,6 @@ import {
   CardMedia,
   CardContent,
   Typography,
-  Stack,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -17,48 +16,113 @@ import styled from "styled-components";
 import { GitHub } from "@mui/icons-material";
 
 const Wrapper = styled(Box)`
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 2%;
-  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  background: var(--page-background);
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+`;
+
+const Content = styled.div`
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 40px 60px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 600px) {
+    padding: 56px 20px 40px;
+  }
+`;
+
+const PageLabel = styled.div`
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+`;
+
+const PageTitle = styled.h2`
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 50px;
+  letter-spacing: -1px;
+`;
+
+const ProjectGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+  width: 100%;
 `;
 
 const StyledCard = styled(Card)`
-  max-width: 400px;
-  border-radius: 20px;
-  margin: 20px;
+  max-width: 100%;
+  min-width: 0;
+  height: 100%;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 1px solid var(--surface-border);
+  background-color: var(--card-background);
+  color: var(--text-on-surface);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
 
   &:hover {
-    transform: scale(1.05);
-    transition: 0.2s;
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(226, 167, 125, 0.2);
+    transform: translateY(-4px);
   }
 `;
 
 const StyledTitle = styled(Typography)`
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 5px;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
 `;
 
 const ScrollableDescription = styled(Typography)`
-  max-height: 80px;
-  overflow-y: auto;
-  color: #555;
+  max-height: none;
+  overflow-y: visible;
+  color: var(--text-on-surface);
+  line-height: 1.6;
 `;
 
 const AccordionContainer = styled(Accordion)`
   width: 100%;
   box-shadow: none;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid rgba(226, 167, 125, 0.25);
+  background-color: var(--card-background);
   &:first-of-type {
     border-top: none;
+  }
+
+  .MuiAccordionSummary-root {
+    color: var(--text-on-surface);
+  }
+
+  .MuiAccordionDetails-root {
+    color: var(--text-on-surface);
+  }
+`;
+
+const StyledMedia = styled(CardMedia)`
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: var(--page-background);
+
+  @media (max-width: 600px) {
+    height: 190px;
   }
 `;
 
@@ -162,115 +226,118 @@ const Links = () => {
 
   return (
     <Wrapper>
-      <h2 style={{ marginBottom: "2%" }}>Notable Projects</h2>
-      <Stack
-        direction="row"
-        spacing={3}
-        justifyContent="center"
-        alignItems="center"
-        flexWrap="wrap"
-        sx={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: 3,
-          "& > :nth-of-type(3n+1)": {
-            // Adjust this according to the items per row
-            marginLeft: 0,
-          },
-        }}
-      >
-        {projects.map((project, index) => (
-          <StyledCard key={index}>
-            <a href={project.href} target="_blank" rel="noreferrer">
-              <CardMedia
-                component="img"
-                height="180"
-                image={project.imgSrc}
-                alt={project.title}
-              />
-            </a>
-            <CardContent>
+      <Content>
+        <PageLabel>Notable Projects</PageLabel>
+        <PageTitle>Selected Work</PageTitle>
+
+        <ProjectGrid>
+          {projects.map((project, index) => (
+            <StyledCard key={index}>
               <a href={project.href} target="_blank" rel="noreferrer">
-                <StyledTitle>{project.title}</StyledTitle>
+                <StyledMedia
+                  component="img"
+                  image={project.imgSrc}
+                  alt={project.title}
+                />
               </a>
-              <ScrollableDescription variant="body2" color="text.secondary">
-                {project.description}
-              </ScrollableDescription>
-            </CardContent>
-            <AccordionContainer>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls={`panel-content-${index}`}
-                id={`panel-header-${index}`}
+              <CardContent
+                sx={{ flex: 1, display: "flex", flexDirection: "column" }}
               >
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <LaptopIcon />
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ ml: 1 }}
-                  >
-                    Tech Stack
-                  </Typography>
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
+                  <StyledTitle>{project.title}</StyledTitle>
+                </a>
+                <ScrollableDescription variant="body2">
+                  {project.description}
+                </ScrollableDescription>
+
+                <div style={{ marginTop: "auto" }}>
+                  <AccordionContainer>
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls={`panel-content-${index}`}
+                      id={`panel-header-${index}`}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                        }}
+                      >
+                        <LaptopIcon sx={{ fontSize: "1.2rem" }} />
+                        <Typography variant="body2">Tech Stack</Typography>
+                      </div>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography variant="caption">
+                        {project.techDetails}
+                      </Typography>
+                    </AccordionDetails>
+                  </AccordionContainer>
+                  <AccordionContainer>
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls={`panel-content-${index}`}
+                      id={`panel-header-${index}`}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                        }}
+                      >
+                        <InfoIcon sx={{ fontSize: "1.2rem" }} />
+                        <Typography variant="body2">Project Details</Typography>
+                      </div>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography variant="caption">
+                        {project.projectDetails}
+                      </Typography>
+                    </AccordionDetails>
+                  </AccordionContainer>
+                  <AccordionContainer>
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls={`panel-content-${index}`}
+                      id={`panel-header-${index}`}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                        }}
+                      >
+                        <GitHub sx={{ fontSize: "1.2rem" }} />
+                        <Typography variant="body2">GitHub Link</Typography>
+                      </div>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography variant="caption">
+                        <a
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noreferrer"
+                          style={{ color: "#c9956e" }}
+                        >
+                          {project.githubLink}
+                        </a>
+                      </Typography>
+                    </AccordionDetails>
+                  </AccordionContainer>
                 </div>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography variant="caption" color="text.secondary">
-                  {project.techDetails}
-                </Typography>
-              </AccordionDetails>
-            </AccordionContainer>
-            <AccordionContainer>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls={`panel-content-${index}`}
-                id={`panel-header-${index}`}
-              >
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <InfoIcon />
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ ml: 1 }}
-                  >
-                    Project Details
-                  </Typography>
-                </div>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography variant="caption" color="text.secondary">
-                  {project.projectDetails}
-                </Typography>
-              </AccordionDetails>
-            </AccordionContainer>
-            <AccordionContainer>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls={`panel-content-${index}`}
-                id={`panel-header-${index}`}
-              >
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <GitHub />
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ ml: 1 }}
-                  >
-                    GitHub Link
-                  </Typography>
-                </div>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography variant="caption" color="text.secondary">
-                  <a href={project.githubLink} target="_blank" rel="noreferrer">
-                    {project.githubLink}
-                  </a>
-                </Typography>
-              </AccordionDetails>
-            </AccordionContainer>
-          </StyledCard>
-        ))}
-      </Stack>
+              </CardContent>
+            </StyledCard>
+          ))}
+        </ProjectGrid>
+      </Content>
     </Wrapper>
   );
 };

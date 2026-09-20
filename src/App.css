@@ -1,5 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 
+:root {
+  --page-background: #241f1c;
+  --surface-background: #f2e1d2;
+  --card-background: #d8c0ac;
+  --dark-surface: #302824;
+  --dark-surface-hover: #3b302a;
+  --surface-border: #b87952;
+  --accent: #e2a77d;
+  --accent-muted: rgba(226, 167, 125, 0.14);
+  --text-primary: #fff8f2;
+  --text-secondary: #d2bfb1;
+  --text-on-surface: #2d211b;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -12,17 +26,19 @@
 }
 
 #brand {
-  color: white;
+  color: var(--accent);
 }
 
 .wrapper {
   padding: 15px 25px 15px 25px;
-  background-color: #01baef;
+  background-color: var(--surface-background);
   justify-content: center;
-  border-style: solid;
+  border: 1px solid var(--surface-border);
   width: 75%;
   margin: auto;
   margin-bottom: 1%;
+  color: var(--text-on-surface);
+  font-weight: 600;
 }
 
 img {
@@ -36,7 +52,7 @@ img {
 }
 
 .content {
-  background-color: black;
+  background-color: var(--page-background);
   /* position: relative; */
   text-align: center;
   align-items: center;
@@ -47,7 +63,7 @@ img {
 }
 
 .content h1 {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 8em;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -56,11 +72,11 @@ img {
 
 .content h1:nth-child(1) {
   color: transparent;
-  -webkit-text-stroke: 2px #eec875;
+  -webkit-text-stroke: 2px var(--accent);
 }
 
 .content h1:nth-child(2) {
-  color: #eec875;
+  color: var(--accent);
   animation: animate 4s ease-in-out infinite;
 }
 

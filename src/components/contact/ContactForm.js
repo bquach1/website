@@ -11,6 +11,22 @@ import {
   Tooltip,
 } from "@mui/material";
 import InfoIcon from "@mui/icons-material/Info";
+import styled from "styled-components";
+
+const ContactWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1f1f1f;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+`;
+
+const FormContainer = styled.div`
+  max-width: 500px;
+  width: 100%;
+`;
 
 const ContactForm = () => {
   const {
@@ -44,81 +60,175 @@ const ContactForm = () => {
   };
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "92vh",
-        backgroundColor: "#f3f4f6",
-        padding: 2,
-      }}
-    >
-      <Card sx={{ width: "100%", maxWidth: 500, padding: 3, boxShadow: 3 }}>
-        <CardContent>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              marginBottom: 2,
-            }}
-          >
-            <Tooltip
-              title="Any questions, feedback, or requests? Feel free to fill out this form and send an email!"
-              placement="top"
-            >
-              <InfoIcon style={{ marginRight: 10 }} />
-            </Tooltip>
-            <Typography variant="h5" component="h2">
-              Contact Me
-            </Typography>
-          </Box>
+    <ContactWrapper>
+      <FormContainer>
+        <Card
+          sx={{
+            padding: 4,
+            backgroundColor: "rgba(201, 149, 110, 0.08)",
+            border: "1px solid #c9956e",
+            borderRadius: "12px",
+            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)",
+          }}
+        >
+          <CardContent>
+            <Box sx={{ marginBottom: 3, textAlign: "center" }}>
+              <Box sx={{ display: "flex", justifyContent: "center", marginBottom: 1 }}>
+                <Tooltip
+                  title="Any questions, feedback, or requests? Feel free to fill out this form and send an email!"
+                  placement="top"
+                >
+                  <InfoIcon
+                    sx={{
+                      marginRight: "10px",
+                      color: "#c9956e",
+                      fontSize: "1.5rem",
+                    }}
+                  />
+                </Tooltip>
+              </Box>
+              <Typography
+                variant="h5"
+                component="h2"
+                sx={{
+                  color: "#f5f1ed",
+                  fontWeight: 700,
+                  letterSpacing: "0.5px",
+                }}
+              >
+                Get in Touch
+              </Typography>
+              <Typography
+                sx={{
+                  color: "#b3aba3",
+                  marginTop: 1,
+                  fontSize: "0.9rem",
+                }}
+              >
+                Send me a message and I'll get back to you as soon as possible.
+              </Typography>
+            </Box>
 
-          {/* Form Section */}
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
-          >
-            <TextField
-              label="Name"
-              variant="outlined"
-              fullWidth
-              {...register("name", { required: "Name is required" })}
-              error={!!errors.name}
-              helperText={errors.name?.message}
-            />
-            <TextField
-              label="Email"
-              variant="outlined"
-              type="email"
-              fullWidth
-              {...register("email", { required: "Email is required" })}
-              error={!!errors.email}
-              helperText={errors.email?.message}
-            />
-            <TextField
-              label="Message"
-              variant="outlined"
-              multiline
-              rows={4}
-              fullWidth
-              {...register("message", { required: "Message is required" })}
-              error={!!errors.message}
-              helperText={errors.message?.message}
-            />
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              sx={{ mt: 2 }}
+            {/* Form Section */}
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}
             >
-              Send Message
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
-    </Box>
+              <TextField
+                label="Name"
+                variant="outlined"
+                fullWidth
+                {...register("name", { required: "Name is required" })}
+                error={!!errors.name}
+                helperText={errors.name?.message}
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    color: "#f5f1ed",
+                    "& fieldset": {
+                      borderColor: "rgba(201, 149, 110, 0.3)",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#c9956e",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#c9956e",
+                    },
+                  },
+                  "& .MuiInputBase-input::placeholder": {
+                    color: "#b3aba3",
+                    opacity: 1,
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: "#b3aba3",
+                  },
+                }}
+              />
+              <TextField
+                label="Email"
+                variant="outlined"
+                type="email"
+                fullWidth
+                {...register("email", { required: "Email is required" })}
+                error={!!errors.email}
+                helperText={errors.email?.message}
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    color: "#f5f1ed",
+                    "& fieldset": {
+                      borderColor: "rgba(201, 149, 110, 0.3)",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#c9956e",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#c9956e",
+                    },
+                  },
+                  "& .MuiInputBase-input::placeholder": {
+                    color: "#b3aba3",
+                    opacity: 1,
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: "#b3aba3",
+                  },
+                }}
+              />
+              <TextField
+                label="Message"
+                variant="outlined"
+                multiline
+                rows={4}
+                fullWidth
+                {...register("message", { required: "Message is required" })}
+                error={!!errors.message}
+                helperText={errors.message?.message}
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    color: "#f5f1ed",
+                    "& fieldset": {
+                      borderColor: "rgba(201, 149, 110, 0.3)",
+                    },
+                    "&:hover fieldset": {
+                      borderColor: "#c9956e",
+                    },
+                    "&.Mui-focused fieldset": {
+                      borderColor: "#c9956e",
+                    },
+                  },
+                  "& .MuiInputBase-input::placeholder": {
+                    color: "#b3aba3",
+                    opacity: 1,
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: "#b3aba3",
+                  },
+                }}
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                sx={{
+                  mt: 2,
+                  backgroundColor: "#c9956e",
+                  color: "#1f1f1f",
+                  fontWeight: 700,
+                  fontSize: "1rem",
+                  padding: "12px",
+                  borderRadius: "6px",
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  "&:hover": {
+                    backgroundColor: "#a8d5a8",
+                  },
+                }}
+              >
+                Send Message
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      </FormContainer>
+    </ContactWrapper>
   );
 };
 

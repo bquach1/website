@@ -73,7 +73,7 @@ const ExperienceTimeline = () => {
         py: { xs: 3, md: 4 },
         borderRadius: 3,
         background:
-          "linear-gradient(180deg, rgba(245,247,255,0.9) 0%, rgba(255,255,255,0.95) 100%)",
+          "linear-gradient(180deg, var(--dark-surface-hover) 0%, var(--page-background) 100%)",
       }}
     >
       <Typography
@@ -83,7 +83,7 @@ const ExperienceTimeline = () => {
           fontSize: { xs: "1.3rem", md: "1.7rem" },
           fontWeight: 700,
           mb: 0.5,
-          color: "#1c2a4b",
+          color: "var(--accent)",
         }}
       >
         Professional Timeline
@@ -92,7 +92,7 @@ const ExperienceTimeline = () => {
       <Typography
         sx={{
           textAlign: "center",
-          color: "text.secondary",
+          color: "var(--text-secondary)",
           mb: 3,
           fontSize: { xs: "0.9rem", md: "1rem" },
         }}
@@ -117,18 +117,24 @@ const ExperienceTimeline = () => {
             <TimelineOppositeContent sx={{ mt: 1 }}>
               <Typography
                 variant="body2"
-                color="text.secondary"
-                sx={{ fontWeight: 600 }}
+                sx={{ color: "var(--text-secondary)", fontWeight: 600 }}
               >
                 {position.period}
               </Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineDot
-                color="primary"
-                sx={{ boxShadow: "0 0 0 4px rgba(25, 118, 210, 0.12)" }}
+                sx={{
+                  backgroundColor: "var(--accent)",
+                  color: "var(--text-on-surface)",
+                  boxShadow: "0 0 0 4px var(--accent-muted)",
+                }}
               />
-              {index < positions.length - 1 && <TimelineConnector />}
+              {index < positions.length - 1 && (
+                <TimelineConnector
+                  sx={{ backgroundColor: "var(--surface-border)" }}
+                />
+              )}
             </TimelineSeparator>
             <TimelineContent sx={{ textAlign: "left" }}>
               <Paper
@@ -136,8 +142,8 @@ const ExperienceTimeline = () => {
                 sx={{
                   p: { xs: 2, md: 2.5 },
                   borderRadius: 2.5,
-                  border: "1px solid rgba(28, 42, 75, 0.1)",
-                  backgroundColor: "#fff",
+                  border: "1px solid var(--surface-border)",
+                  backgroundColor: "var(--surface-background)",
                   transition: "transform 0.2s ease, box-shadow 0.2s ease",
                   "&:hover": {
                     transform: "translateY(-2px)",
@@ -150,7 +156,7 @@ const ExperienceTimeline = () => {
                   component="h3"
                   sx={{
                     fontWeight: 700,
-                    color: "#1b2b52",
+                    color: "var(--text-on-surface)",
                     lineHeight: 1.3,
                     justifyContent: "flex-start",
                     display: "flex",
@@ -172,10 +178,14 @@ const ExperienceTimeline = () => {
                     size="small"
                     sx={{
                       fontWeight: 600,
-                      bgcolor: "rgba(25, 118, 210, 0.08)",
+                      bgcolor: "var(--accent-muted)",
+                      color: "var(--text-on-surface)",
                     }}
                   />
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography
+                    variant="body2"
+                    sx={{ color: "var(--text-on-surface)" }}
+                  >
                     {position.location}
                   </Typography>
                 </Box>
@@ -191,10 +201,10 @@ const ExperienceTimeline = () => {
                     textAlign: "left",
                     "& li": {
                       mb: 1,
-                      color: "#28364f",
+                      color: "var(--text-on-surface)",
                     },
                     "& li::marker": {
-                      color: "#1976d2",
+                      color: "var(--surface-border)",
                     },
                   }}
                 >

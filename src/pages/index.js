@@ -1,165 +1,234 @@
 import React from "react";
 import styled from "styled-components";
-import { IconButton } from "@mui/material";
+import { IconButton, Box } from "@mui/material";
 import { GitHub, LinkedIn } from "@mui/icons-material";
 import { ReactComponent as DevPost } from "../assets/devpost.svg";
 
 const HomeWrapper = styled.div`
-  padding-top: 2%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background: #1f1f1f;
+  font-family: "Poppins", sans-serif;
+  color: #f5f1ed;
+  min-height: 100vh;
+`;
+
+const Container = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
   width: 100%;
-  background: linear-gradient(135deg, #e0eafc, #cfdef3);
-  font-family: "Roboto", sans-serif;
-  color: #333;
+  padding: 80px 40px;
 `;
 
-const Card = styled.div`
-  display: flex;
-  align-items: center;
-  width: 60%;
-  background-color: #f7f7f7;
-  color: #333;
-  font-family: "Roboto", sans-serif;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 30px;
-  margin-bottom: 2%;
-`;
-
-const LeftCard = styled.div`
-  width: 60%;
+const Section = styled.div`
+  margin-bottom: 80px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-left: 20px;
-  padding-right: 20px;
+  gap: 20px;
 
-  div:first-child {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  div:nth-child(2) {
-    font-size: 1.2rem;
-    line-height: 1.6;
+  &:last-child {
+    margin-bottom: 0;
   }
 `;
 
-const ProfileImage = styled.img`
-  width: 200px;
-  border-radius: 50%;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+const SectionLabel = styled.div`
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #c9956e;
+  font-weight: 600;
+  text-transform: uppercase;
 `;
 
-const Image = styled.img`
-  width: 200px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-`;
-
-const IconFooter = styled.div`
+const ContentRow = styled.div`
   display: flex;
-  justify-content: space-between;
-  width: 20%;
+  align-items: center;
+  gap: 40px;
+  padding: 30px 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+`;
+
+const TextContent = styled.div`
+  flex: 1;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #f5f1ed;
+    letter-spacing: -0.5px;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #b3aba3;
+    margin-bottom: 15px;
+
+    a {
+      color: #c9956e;
+      text-decoration: none;
+      font-weight: 600;
+
+      &:hover {
+        color: #a8d5a8;
+      }
+    }
+  }
+`;
+
+const ImageContent = styled.div`
+  flex-shrink: 0;
+
+  img {
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(201, 149, 110, 0.2);
+    border: 2px solid rgba(201, 149, 110, 0.3);
+  }
+`;
+
+const SocialIcons = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+
+  a {
+    color: #b3aba3;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: #c9956e;
+    }
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
 `;
 
 const Home = () => {
   return (
     <HomeWrapper>
-      <Card>
-        <LeftCard>
-          <div>Hi, I'm Bruce</div>
-          <div>
-            I'm a passionate software developer with a keen interest in building
-            scalable and efficient applications. I love solving complex problems
-            and collaborating in teams to deliver high-quality products. I'm
-            always open to working with new technologies and contributing to fun
-            and/or useful projects.
-          </div>
-        </LeftCard>
-        <ProfileImage
-          src={require("../assets/profile_pic.png")}
-          alt="Bruce PFP"
-        />
-      </Card>
-      <Card>
-        <LeftCard>
-          <div>About Me</div>
-          <div>
-            I'm currently at PMG as an AI & Software Engineer II working on the
-            Data pillar, focused on frontend development for proprietary
-            marketing tech. I graduated from Louisiana State University in May
-            2024 with a Bachelor's in Computer Science concentrating in software
-            engineering, as well as minors in mathematics and Chinese.
-          </div>
-        </LeftCard>
-        <Image src={require("../assets/pmg_logo.png")} alt="PMG Logo" />
-      </Card>
-      <Card>
-        <LeftCard>
-          <div>Fun Stuff</div>
-          <div>
-            I'm a big foodie, fan of Snoopy and pandas, and enjoy collecting and
-            playing trading card games (namely One Piece, Riftbound, and
-            Pokemon). In my free time, I like reviewing food on my&nbsp;
-            <a
-              href="https://www.instagram.com/master_of_flavors/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Instagram
-            </a>{" "}
-            and posting{" "}
-            <a
-              href="https://www.instagram.com/master_of_rips/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              trading card content
-            </a>{" "}
-            (feel free to follow). I enjoy tracking the NBA, watching shows and
-            gaming in addition to making projects.
-          </div>
-        </LeftCard>
-        <ProfileImage
-          src={require("../assets/pickleball_snoopy.png")}
-          alt="Pickleball Snoopy"
-        />
-      </Card>
-      <IconFooter>
-        <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          rel="noreferrer"
+      <Container>
+        {/* Intro Section */}
+        <Section>
+          <SectionLabel>Who I Am</SectionLabel>
+          <ContentRow>
+            <TextContent>
+              <h2>Hi, I'm Bruce</h2>
+              <p>
+                I'm a passionate software developer with a keen interest in
+                building scalable and efficient applications. I love solving
+                complex problems and collaborating in teams to deliver
+                high-quality products. I'm always open to working with new
+                technologies and contributing to fun and/or useful projects.
+              </p>
+            </TextContent>
+            <ImageContent>
+              <img src={require("../assets/profile_pic.png")} alt="Bruce PFP" />
+            </ImageContent>
+          </ContentRow>
+        </Section>
+
+        {/* About Section */}
+        <Section>
+          <SectionLabel>Current Focus</SectionLabel>
+          <ContentRow>
+            <TextContent>
+              <h2>About Me</h2>
+              <p>
+                I'm currently at PMG as an AI & Software Engineer II working on
+                the Data pillar, focused on frontend development for proprietary
+                marketing tech. I graduated from Louisiana State University in
+                May 2024 with a Bachelor's in Computer Science concentrating in
+                software engineering, as well as minors in mathematics and
+                Chinese.
+              </p>
+            </TextContent>
+            <ImageContent>
+              <img src={require("../assets/pmg_logo.png")} alt="PMG Logo" />
+            </ImageContent>
+          </ContentRow>
+        </Section>
+
+        {/* Fun Section */}
+        <Section>
+          <SectionLabel>When I'm Not Coding</SectionLabel>
+          <ContentRow>
+            <TextContent>
+              <h2>Fun Stuff</h2>
+              <p>
+                I'm a big foodie, fan of Snoopy and pandas, and enjoy collecting
+                and playing trading card games (namely One Piece, Riftbound, and
+                Pokemon). In my free time, I like reviewing food on my{" "}
+                <a
+                  href="https://www.instagram.com/master_of_flavors/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Instagram
+                </a>{" "}
+                and posting{" "}
+                <a
+                  href="https://www.instagram.com/master_of_rips/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  trading card content
+                </a>{" "}
+                (feel free to follow). I enjoy tracking the NBA, watching shows
+                and gaming in addition to making projects.
+              </p>
+            </TextContent>
+            <ImageContent>
+              <img
+                src={require("../assets/pickleball_snoopy.png")}
+                alt="Pickleball Snoopy"
+              />
+            </ImageContent>
+          </ContentRow>
+        </Section>
+
+        {/* Social Links */}
+        <Box
+          sx={{
+            marginTop: "60px",
+            paddingTop: "40px",
+            borderTop: "1px solid rgba(201, 149, 110, 0.2)",
+          }}
         >
-          <a href="https://github.com/bquach1" target="_blank">
-            <GitHub />
-          </a>
-        </IconButton>
-        <IconButton size="large" edge="start" color="inherit" aria-label="menu">
-          <a
-            href="https://www.linkedin.com/in/bruce-quach/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <LinkedIn />
-          </a>
-        </IconButton>
-        <IconButton size="large" edge="start" color="inherit" aria-label="menu">
-          <a
-            href="https://devpost.com/bquach1"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <DevPost style={{ width: 25, height: 25 }} />
-          </a>
-        </IconButton>
-      </IconFooter>
+          <SocialIcons>
+            <a
+              href="https://github.com/bquach1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GitHub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/bruce-quach/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <LinkedIn />
+            </a>
+            <a
+              href="https://devpost.com/bquach1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <DevPost style={{ width: 28, height: 28 }} />
+            </a>
+          </SocialIcons>
+        </Box>
+      </Container>
     </HomeWrapper>
   );
 };

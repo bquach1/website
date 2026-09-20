@@ -1,6 +1,7 @@
 .resume {
-    border-style: solid;
-    width: 50%; 
-    margin:auto;
-    background-color: #01BAEF;
+  border-style: solid;
+  width: 50%;
+  margin: auto;
+  background-color: rgba(201, 149, 110, 0.1);
+  border: 2px solid #c9956e;
 }

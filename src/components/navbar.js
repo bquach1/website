@@ -13,13 +13,18 @@ import PandaIcon from "../assets/panda.svg";
 
 const HeaderButton = styled(Button)`
   text-transform: none;
-  color: white;
+  color: var(--text-primary);
+
+  &:hover {
+    color: var(--accent);
+  }
 `;
 
-const activeLinkStyle = {
-  textDecoration: "underline",
-  fontWeight: "bold",
-};
+const navLinkStyle = ({ isActive }) => ({
+  color: isActive ? "var(--accent)" : "var(--text-primary)",
+  fontWeight: isActive ? "bold" : "normal",
+  textDecoration: "none",
+});
 
 function Header() {
   return (
@@ -27,9 +32,10 @@ function Header() {
       <AppBar
         position="static"
         sx={{
-          background: "linear-gradient(45deg, #434343, #1c1c1c)",
-          color: "#ffffff",
-          boxShadow: "0 8px 24px rgba(0, 0, 0, 0.28)",
+          background:
+            "linear-gradient(45deg, var(--dark-surface-hover), var(--page-background))",
+          color: "var(--text-primary)",
+          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4)",
         }}
       >
         <Toolbar
@@ -54,45 +60,31 @@ function Header() {
           </IconButton>
 
           {/* Title */}
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, color: "var(--text-primary)" }}
+          >
             Bruce Quach
           </Typography>
 
           {/* Navigation Links */}
-          <NavLink
-            to="/"
-            style={({ isActive }) => (isActive ? activeLinkStyle : null)}
-          >
-            <HeaderButton sx={{ color: "white", textTransform: "none" }}>
-              About
-            </HeaderButton>
+          <NavLink to="/" style={navLinkStyle}>
+            <HeaderButton sx={{ textTransform: "none" }}>About</HeaderButton>
           </NavLink>
 
-          <NavLink
-            to="/links"
-            style={({ isActive }) => (isActive ? activeLinkStyle : null)}
-          >
-            <HeaderButton sx={{ color: "white", textTransform: "none" }}>
-              Projects
-            </HeaderButton>
+          <NavLink to="/links" style={navLinkStyle}>
+            <HeaderButton sx={{ textTransform: "none" }}>Projects</HeaderButton>
           </NavLink>
 
-          <NavLink
-            to="/skills"
-            style={({ isActive }) => (isActive ? activeLinkStyle : null)}
-          >
-            <HeaderButton sx={{ color: "white", textTransform: "none" }}>
+          <NavLink to="/skills" style={navLinkStyle}>
+            <HeaderButton sx={{ textTransform: "none" }}>
               Skills and Resume/CSV
             </HeaderButton>
           </NavLink>
 
-          <NavLink
-            to="/contact"
-            style={({ isActive }) => (isActive ? activeLinkStyle : null)}
-          >
-            <HeaderButton sx={{ color: "white", textTransform: "none" }}>
-              Contact
-            </HeaderButton>
+          <NavLink to="/contact" style={navLinkStyle}>
+            <HeaderButton sx={{ textTransform: "none" }}>Contact</HeaderButton>
           </NavLink>
         </Toolbar>
       </AppBar>

@@ -57,13 +57,13 @@ const PdfViewer = () => {
           <Box
             key={index}
             sx={{
-              border: "1px solid rgba(28, 42, 75, 0.12)",
+              border: "1px solid var(--surface-border)",
               borderRadius: "12px",
               padding: 2.5,
               textAlign: "center",
               cursor: "pointer",
               width: "220px",
-              backgroundColor: "#fff",
+              backgroundColor: "var(--dark-surface)",
               transition: "transform 0.2s ease, box-shadow 0.2s ease",
               "&:hover": {
                 boxShadow: "0 8px 24px rgba(17, 24, 39, 0.12)",
@@ -78,13 +78,13 @@ const PdfViewer = () => {
                 height: "240px",
                 borderRadius: "8px",
                 background:
-                  "linear-gradient(180deg, rgba(25,118,210,0.12) 0%, rgba(25,118,210,0.05) 100%)",
-                border: "1px solid rgba(25,118,210,0.2)",
+                  "linear-gradient(180deg, var(--dark-surface-hover) 0%, var(--page-background) 100%)",
+                border: "1px solid var(--surface-border)",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                color: "#1b2b52",
+                color: "var(--text-primary)",
               }}
               aria-label="Resume icon"
             >

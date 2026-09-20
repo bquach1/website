@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/website/static/css/main.d1aa82b3.css",
-    "main.js": "/website/static/js/main.789d3353.js",
+    "main.css": "/website/static/css/main.2945d355.css",
+    "main.js": "/website/static/js/main.cd557f27.js",
     "static/media/profile_pic.png": "/website/static/media/profile_pic.c27b4f7df597c7cdc88e.png",
     "static/media/proudme_journal.png": "/website/static/media/proudme_journal.ca1d1a964b32d141ef0f.png",
     "static/media/gus-sonny-angels.png": "/website/static/media/gus-sonny-angels.6a1a25b617ab126bb47b.png",
@@ -15,22 +15,22 @@
     "static/media/mongodb-svgrepo-com.svg": "/website/static/media/mongodb-svgrepo-com.1dc47c60f9d90afc1e171c4529af5966.svg",
     "static/media/nodejs-svgrepo-com.svg": "/website/static/media/nodejs-svgrepo-com.b0d6c7cead1cf51d8ac0b40bf3637dce.svg",
     "static/media/postgresql-svgrepo-com.svg": "/website/static/media/postgresql-svgrepo-com.9aed68683d15cfc3c3fd8ddf1d89ff4e.svg",
-    "static/media/mysql-svgrepo-com.svg": "/website/static/media/mysql-svgrepo-com.62dc0a29b1bdc4c48f11538413de53ba.svg",
+    "static/media/mysql-svgrepo-com.svg": "/website/static/media/mysql-svgrepo-com.77a714a758c3a4d1f535635f6f81a023.svg",
     "static/media/typescript-svgrepo-com.svg": "/website/static/media/typescript-svgrepo-com.c0eb7115ca99c9b18ba0baf90f610f7d.svg",
-    "static/media/react-svgrepo-com.svg": "/website/static/media/react-svgrepo-com.22a05374f4eefdd120b71df3f98d68a1.svg",
-    "static/media/java-4-logo-svgrepo-com.svg": "/website/static/media/java-4-logo-svgrepo-com.99fb297edd634399fc9fe04d4684b1b4.svg",
+    "static/media/react-svgrepo-com.svg": "/website/static/media/react-svgrepo-com.b4aadc0713bb11142756748e605f70bd.svg",
+    "static/media/java-4-logo-svgrepo-com.svg": "/website/static/media/java-4-logo-svgrepo-com.8ee5f9813e1ebcd16f2a36152b8dc856.svg",
     "static/media/aws-svgrepo-com.svg": "/website/static/media/aws-svgrepo-com.7fa306c206a3302fdf64de3f212e8905.svg",
-    "static/media/redux-svgrepo-com.svg": "/website/static/media/redux-svgrepo-com.3f85561b9a8c76dc1a2aa13fe6b06e18.svg",
-    "static/media/python-svgrepo-com.svg": "/website/static/media/python-svgrepo-com.7658fc5b493f0fa4979b28893c05b15b.svg",
-    "static/media/panda.svg": "/website/static/media/panda.c4611d44b2ea5f69da95d3a64f20f35b.svg",
+    "static/media/redux-svgrepo-com.svg": "/website/static/media/redux-svgrepo-com.d4bbf5d66393cef6bdaff7de6a696656.svg",
+    "static/media/python-svgrepo-com.svg": "/website/static/media/python-svgrepo-com.3d8ed41432d2edaf850964b1055db196.svg",
+    "static/media/panda.svg": "/website/static/media/panda.2311dcacaa980e0fba678b785c3b8e1b.svg",
     "index.html": "/website/index.html",
-    "static/media/js-svgrepo-com.svg": "/website/static/media/js-svgrepo-com.692ca1eff79b74eb3edd77bd8bd33dfb.svg",
+    "static/media/js-svgrepo-com.svg": "/website/static/media/js-svgrepo-com.3e2687addc486a87f811b895680a5eed.svg",
     "static/media/devpost.svg": "/website/static/media/devpost.8af03093a9c66fecfb2c51d322280d3d.svg",
-    "main.d1aa82b3.css.map": "/website/static/css/main.d1aa82b3.css.map",
-    "main.789d3353.js.map": "/website/static/js/main.789d3353.js.map"
+    "main.2945d355.css.map": "/website/static/css/main.2945d355.css.map",
+    "main.cd557f27.js.map": "/website/static/js/main.cd557f27.js.map"
   },
   "entrypoints": [
-    "static/css/main.d1aa82b3.css",
-    "static/js/main.789d3353.js"
+    "static/css/main.2945d355.css",
+    "static/js/main.cd557f27.js"
   ]
 }
